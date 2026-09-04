@@ -9,3 +9,14 @@ coverage/
 .next/
 .vite/
 *.log
+
+# Local project context and private working material
+AGENTS.md
+CLAUDE.md
+docs/
+references/
+notes/
+private/
+.local/
+.claude/
+.codex/
