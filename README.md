@@ -2,6 +2,8 @@
 
 Working repository for a focused submission to Nerdy's AI Hackathon Challenge.
 
+GitHub: https://github.com/Adityalingwal/nerdy-ai-hackathon-2026
+
 Current direction: **K-5 Math Game**. The exact learner, math concept, mechanic,
 and AI behavior are still being validated through bounded research.
 
