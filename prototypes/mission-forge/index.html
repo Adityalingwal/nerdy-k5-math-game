@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex" />
+    <title>Mission Forge — scripted concept prototype</title>
+    <!-- Inline icon: no extra request or asset file. -->
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23110f33'/%3E%3Cpolygon points='16,5 25,12 22,26 10,26 7,12' fill='%234fe3ff'/%3E%3C/svg%3E"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <!--
+      Original inline SVG symbols (drawn for this prototype). The sprite is
+      sized to zero instead of display:none so its gradients still render.
+    -->
+    <svg class="sprite" aria-hidden="true" focusable="false">
+      <defs>
+        <linearGradient id="g-crystal" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stop-color="#b7f5ff" />
+          <stop offset="0.55" stop-color="#4fd8ff" />
+          <stop offset="1" stop-color="#7b6cff" />
+        </linearGradient>
+        <linearGradient id="g-battery" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0" stop-color="#ffcf7a" />
+          <stop offset="1" stop-color="#ff9f2e" />
+        </linearGradient>
+        <linearGradient id="g-hull" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#f1f4ff" />
+          <stop offset="1" stop-color="#9ea9e0" />
+        </linearGradient>
+        <linearGradient id="g-robo" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#eef2ff" />
+          <stop offset="1" stop-color="#a8b3ea" />
+        </linearGradient>
+      </defs>
+
+      <symbol id="i-crystal" viewBox="0 0 24 30">
+        <polygon
+          points="12,1 23,9 19,28 5,28 1,9"
+          fill="url(#g-crystal)"
+          stroke="#d8fbff"
+          stroke-width="1.2"
+          stroke-linejoin="round"
+        />
+        <polygon points="12,1 12,13 1,9" fill="#ffffff" opacity="0.35" />
+        <polyline points="1,9 12,13 23,9" fill="none" stroke="#e6fdff" stroke-width="1" opacity="0.8" />
+        <line x1="12" y1="13" x2="12" y2="28" stroke="#e6fdff" stroke-width="1" opacity="0.55" />
+      </symbol>
+
+      <symbol id="i-battery" viewBox="0 0 20 30">
+        <rect x="6.5" y="1" width="7" height="4" rx="1.5" fill="#ffe2ad" />
+        <rect x="2" y="4" width="16" height="25" rx="4" fill="url(#g-battery)" stroke="#ffe7bd" stroke-width="1.2" />
+        <path d="M11.5 8 L6.5 17 L10 17 L8.5 25 L13.5 15 L10 15 Z" fill="#3a2410" opacity="0.85" />
+      </symbol>
+
+      <symbol id="i-ship" viewBox="0 0 80 46">
+        <path d="M14 8 L66 8 L60 30 L20 30 Z" fill="url(#g-hull)" stroke="#dfe5ff" stroke-width="1.5" stroke-linejoin="round" />
+        <path d="M14 14 L2 34 L20 30 Z" fill="#7f8bd0" />
+        <path d="M66 14 L78 34 L60 30 Z" fill="#7f8bd0" />
+        <rect x="30" y="14" width="20" height="6" rx="3" fill="#2a3170" />
+        <rect x="26" y="30" width="28" height="6" rx="2" fill="#5b659f" />
+        <g class="flame">
+          <path d="M30 36 L40 46 L50 36 Z" fill="#ffb547" />
+          <path d="M35 36 L40 42 L45 36 Z" fill="#fff1c9" />
+        </g>
+      </symbol>
+
+      <symbol id="i-rover" viewBox="0 0 80 40">
+        <path d="M8 6 L72 6 L68 24 L12 24 Z" fill="url(#g-hull)" stroke="#dfe5ff" stroke-width="1.5" stroke-linejoin="round" />
+        <rect x="28" y="11" width="24" height="6" rx="3" fill="#2a3170" />
+        <circle cx="18" cy="30" r="8" fill="#2a3170" stroke="#c7cff5" stroke-width="2" />
+        <circle cx="40" cy="30" r="8" fill="#2a3170" stroke="#c7cff5" stroke-width="2" />
+        <circle cx="62" cy="30" r="8" fill="#2a3170" stroke="#c7cff5" stroke-width="2" />
+        <circle cx="18" cy="30" r="2.5" fill="#c7cff5" />
+        <circle cx="40" cy="30" r="2.5" fill="#c7cff5" />
+        <circle cx="62" cy="30" r="2.5" fill="#c7cff5" />
+      </symbol>
+    </svg>
+
+    <div class="app" id="app">
+      <header class="topbar">
+        <span class="wordmark" aria-label="Mission Forge">
+          <svg viewBox="0 0 24 30" aria-hidden="true"><use href="#i-crystal" /></svg>
+          Mission Forge
+        </span>
+        <span class="mission-count" id="mission-count">Mission 1 of 2</span>
+        <span class="badge" id="disclosure">Scripted concept prototype — no runtime AI</span>
+      </header>
+
+      <main class="stage" id="stage" aria-label="Fabrication bay">
+        <div class="bay" aria-hidden="true">
+          <div class="stars"></div>
+          <div class="aperture" id="aperture">
+            <div class="aperture-core"></div>
+            <span class="aperture-label">LAUNCH</span>
+          </div>
+          <div class="floor"></div>
+        </div>
+
+        <section class="eq-card" id="eq-card" aria-label="Equation"></section>
+
+        <div class="bubble" id="bubble" role="note" aria-label="Robo says"></div>
+
+        <div class="robo" id="robo" data-mood="curious" aria-hidden="true">
+          <svg class="robo-svg" viewBox="0 0 160 190">
+            <g class="robo-body">
+              <ellipse class="robo-jet" cx="80" cy="182" rx="26" ry="5" />
+              <g class="arm arm-l">
+                <path d="M48 124 Q30 134 26 152" />
+                <circle cx="26" cy="154" r="7" />
+              </g>
+              <g class="arm arm-r">
+                <path d="M112 124 Q130 134 134 152" />
+                <circle cx="134" cy="154" r="7" />
+              </g>
+              <rect x="72" y="98" width="16" height="12" rx="4" fill="#8f99cf" />
+              <rect x="46" y="108" width="68" height="62" rx="20" fill="url(#g-robo)" />
+              <rect x="58" y="122" width="44" height="28" rx="10" fill="#1b2150" />
+              <circle class="chest-light" cx="80" cy="136" r="7" />
+              <g class="head">
+                <line x1="80" y1="30" x2="80" y2="13" stroke="#aab4e8" stroke-width="4" stroke-linecap="round" />
+                <circle class="antenna-bulb" cx="80" cy="10" r="7" />
+                <rect x="28" y="28" width="104" height="74" rx="28" fill="url(#g-robo)" />
+                <rect x="40" y="40" width="80" height="50" rx="18" fill="#141a44" />
+                <g class="face face-curious">
+                  <ellipse class="eye" cx="64" cy="62" rx="8" ry="10" />
+                  <ellipse class="eye" cx="96" cy="62" rx="8" ry="10" />
+                  <circle cx="67" cy="58" r="2.6" fill="#ffffff" />
+                  <circle cx="99" cy="58" r="2.6" fill="#ffffff" />
+                  <circle class="mouth-line" cx="80" cy="80" r="4" />
+                </g>
+                <g class="face face-wrong">
+                  <path class="eye" d="M55 60 L73 60 A9 9 0 0 1 55 60 Z" />
+                  <path class="eye" d="M87 60 L105 60 A9 9 0 0 1 87 60 Z" />
+                  <path class="brow" d="M54 52 L72 55" />
+                  <path class="brow" d="M88 55 L106 52" />
+                  <path class="mouth-line" d="M66 78 Q82 86 96 74" />
+                </g>
+                <g class="face face-puzzled">
+                  <ellipse class="eye" cx="64" cy="62" rx="8" ry="10" />
+                  <ellipse class="eye" cx="96" cy="64" rx="6" ry="7" />
+                  <path class="brow" d="M88 50 L104 54" />
+                  <path class="mouth-line" d="M68 80 l6 -4 l6 4 l6 -4 l6 4" />
+                </g>
+                <g class="face face-understood">
+                  <path class="eye-arc" d="M55 66 L64 57 L73 66" />
+                  <path class="eye-arc" d="M87 66 L96 57 L105 66" />
+                  <path class="mouth-line" d="M64 74 Q80 90 96 74" />
+                </g>
+              </g>
+            </g>
+          </svg>
+        </div>
+
+        <div class="world" id="world" role="group" aria-label="Mission world" aria-describedby="world-desc">
+          <p class="sr-only" id="world-desc"></p>
+          <div class="scan" id="scan" hidden></div>
+          <div class="chips" id="chips"></div>
+          <div class="groups" id="groups"></div>
+          <div class="pile-wrap">
+            <div class="pile" id="pile"></div>
+            <p class="pile-label" id="pile-label"></p>
+          </div>
+        </div>
+
+        <section class="summary" id="summary" hidden aria-labelledby="summary-title"></section>
+      </main>
+
+      <section class="dock" id="dock" aria-label="Your move"></section>
+      <div class="sr-only" id="live" aria-live="polite" aria-atomic="true"></div>
+    </div>
+
+    <section class="review" id="review" aria-labelledby="review-title">
+      <h2 id="review-title" tabindex="-1">Concept review (adult operator)</h2>
+      <p>
+        This page is a scripted concept prototype for product evaluation. The
+        story interpreter is a small local script that recognises a few known
+        wordings and selects one of two closed mission schemas; it is not AI
+        and makes no network call. All counts, roles and pass/fail checks come
+        from those deterministic schemas. It does not measure or claim any
+        learning effect.
+      </p>
+      <h3>Questions this slice should answer</h3>
+      <ol>
+        <li>Does the opening communicate the fantasy and first action within 10 seconds?</li>
+        <li>Does story &rarr; playable world feel like a meaningful transformation?</li>
+        <li>Is Robo's mistake understandable without an adult explanation?</li>
+        <li>Does debugging require mathematical thinking rather than answer entry?</li>
+        <li>Does the transfer mission expose what the quotient counts?</li>
+        <li>Does the experience feel more like a game than a decorated worksheet?</li>
+        <li>
+          Play both examples. Does changing only the story — and therefore the
+          labels, the world, Robo's mistake, the repair and the transfer — make
+          the story step feel necessary rather than decorative?
+        </li>
+        <li>If real AI later replaced the interpreter, would its contribution be visible and necessary?</li>
+      </ol>
+      <h3>What is scripted here</h3>
+      <ul>
+        <li>Story input is real and editable, and it genuinely decides the mission: <b>3 in each ship</b> builds 4 ships of 3, <b>3 ships share</b> builds 3 ships of 4, and each one changes the labels, Robo's wrong world, the repair action and the transfer. Only a small family of wordings for those two meanings is recognised; anything else gets an honest refusal.</li>
+        <li>There are exactly two meanings. A real version would have to read many more, and decide between them from short, often ambiguous text.</li>
+        <li>Robo's mistake is scripted, not generated: he always builds the opposite of the meaning the script read.</li>
+        <li>"Teach Robo" uses fixed choice slots. A real version would read a free-form explanation and ask one grounded clarifying question.</li>
+      </ul>
+      <p><a href="#app" class="to-top">Back to the bay</a></p>
+    </section>
+
+    <script src="./main.js"></script>
+  </body>
+</html>

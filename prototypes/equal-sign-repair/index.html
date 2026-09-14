@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex" />
+    <title>Equalizer Lab — scripted concept prototype</title>
+    <!-- Inline SVG icon written for this prototype: no extra request, no asset file. -->
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%231a1740'/%3E%3Crect x='5' y='11' width='22' height='3' rx='1.5' fill='%2352e6ff'/%3E%3Crect x='5' y='18' width='22' height='3' rx='1.5' fill='%2352e6ff'/%3E%3C/svg%3E"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <!--
+      Original inline SVG gradient definitions drawn for this prototype.
+      Sized to zero rather than display:none so the gradients still resolve.
+    -->
+    <svg class="sprite" aria-hidden="true" focusable="false">
+      <defs>
+        <linearGradient id="g-cell" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#ffd98a" />
+          <stop offset="1" stop-color="#ff9d3d" />
+        </linearGradient>
+        <linearGradient id="g-bot" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#eef4ff" />
+          <stop offset="1" stop-color="#9fb0e8" />
+        </linearGradient>
+        <linearGradient id="g-visor" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stop-color="#6ff0ff" />
+          <stop offset="1" stop-color="#3d8bff" />
+        </linearGradient>
+      </defs>
+    </svg>
+
+    <div class="app" id="app">
+      <header class="topbar">
+        <p class="chip chip-objective" id="objective">
+          <span class="chip-key" aria-hidden="true">◆</span>
+          <span id="objectiveText">Make both rails carry the same energy.</span>
+        </p>
+        <p class="chip chip-banner" id="banner">Scripted concept prototype — no runtime AI</p>
+        <button
+          type="button"
+          class="chip chip-toggle"
+          id="pathsToggle"
+          aria-expanded="false"
+          aria-controls="pathsPanel"
+        >
+          Test paths
+        </button>
+      </header>
+
+      <div class="paths-panel" id="pathsPanel" hidden>
+        <p class="paths-note">
+          Adult reviewer tool. Loads one of four adult-authored synthetic starting states and
+          replays the lab from the beginning. Every reading below is fixed in advance by this
+          prototype. No learner text is analysed and no model is called.
+        </p>
+        <div class="paths-grid" id="pathsGrid"></div>
+      </div>
+
+      <main class="stage">
+        <section class="playfield" aria-label="Energy bridge">
+          <div class="equation" id="equation"></div>
+
+          <div class="bridge" id="bridge" data-balance="unknown">
+            <div class="rail rail-left" id="rail-left">
+              <p class="rail-name" id="rail-left-name">Left rail</p>
+              <div class="rail-groups" id="rail-left-groups"></div>
+              <p class="rail-total" id="rail-left-total" hidden></p>
+            </div>
+
+            <div class="core" id="core">
+              <span class="core-sign" aria-hidden="true">=</span>
+              <span class="core-state" id="coreState">unknown</span>
+            </div>
+
+            <div class="rail rail-right" id="rail-right">
+              <p class="rail-name" id="rail-right-name">Right rail</p>
+              <div class="rail-groups" id="rail-right-groups"></div>
+              <p class="rail-total" id="rail-right-total" hidden></p>
+            </div>
+          </div>
+
+          <p class="status" id="status" role="status" aria-live="polite"></p>
+        </section>
+
+        <section class="side">
+          <div class="bot" id="bot" data-mood="calm">
+            <svg class="bot-art" viewBox="0 0 96 104" role="img" aria-labelledby="botArtTitle">
+              <title id="botArtTitle">Volt, the bridge maintenance bot</title>
+              <line x1="48" y1="10" x2="48" y2="22" stroke="#7d8bc4" stroke-width="3" stroke-linecap="round" />
+              <circle class="bot-lamp" cx="48" cy="8" r="6" fill="#ffd98a" />
+              <rect x="16" y="22" width="64" height="48" rx="16" fill="url(#g-bot)" stroke="#cdd8ff" stroke-width="2" />
+              <rect class="bot-visor" x="26" y="34" width="44" height="22" rx="11" fill="url(#g-visor)" />
+              <circle class="bot-eye bot-eye-l" cx="39" cy="45" r="5" fill="#0d1030" />
+              <circle class="bot-eye bot-eye-r" cx="57" cy="45" r="5" fill="#0d1030" />
+              <path class="bot-mouth" d="M38 62 Q48 62 58 62" fill="none" stroke="#6a77ae" stroke-width="3" stroke-linecap="round" />
+              <rect x="8" y="38" width="8" height="20" rx="4" fill="#8e9bd6" />
+              <rect x="80" y="38" width="8" height="20" rx="4" fill="#8e9bd6" />
+              <ellipse class="bot-skirt" cx="48" cy="82" rx="26" ry="9" fill="#3c4a91" opacity="0.75" />
+              <ellipse cx="48" cy="94" rx="18" ry="5" fill="#2a3a7a" opacity="0.25" />
+            </svg>
+            <p class="bot-line" id="botLine"></p>
+          </div>
+
+          <div class="explanation" id="explanation">
+            <p class="exp-head">
+              <span class="exp-tag" id="expTag">Synthetic attempt</span>
+              <span class="exp-sub">adult-authored, read-only</span>
+            </p>
+            <p class="exp-note" id="expNote"></p>
+            <p class="exp-trace" id="expTrace"></p>
+            <div class="exp-read" id="expRead" hidden>
+              <p class="exp-read-line">
+                <span class="exp-read-key">Scripted reading</span>
+                <span class="exp-read-label" id="expLabel"></span>
+              </p>
+              <p class="exp-read-line">
+                <span class="exp-read-key">Next probe</span>
+                <span class="exp-read-probe" id="expProbe"></span>
+              </p>
+              <p class="exp-read-foot">
+                Fixed in advance by this scripted path. No free-form language was understood.
+              </p>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <div class="tools" id="tools" hidden>
+        <p class="tools-head" id="toolsHead">Tool tray</p>
+        <div class="tools-row" id="toolsRow"></div>
+        <div class="pod" id="pod" hidden>
+          <span class="pod-label" id="podLabel">Number pod</span>
+          <button type="button" class="tool-btn pod-btn" id="podMinus" aria-label="Decrease the missing number by one">−</button>
+          <output class="pod-value" id="podValue" for="podMinus podPlus">0</output>
+          <button type="button" class="tool-btn pod-btn" id="podPlus" aria-label="Increase the missing number by one">+</button>
+        </div>
+      </div>
+
+      <div class="controls" id="controls"></div>
+
+      <footer class="footnote">
+        <p>
+          Equalizer Lab — isolated D-013 concept slice. Synthetic adult-operated product-design
+          evidence only. Not a learner study, not a claim about learning, grade suitability or
+          mastery. All artwork is original inline SVG/CSS. No dependency, no network call, no
+          storage.
+        </p>
+      </footer>
+    </div>
+
+    <script src="./main.js"></script>
+  </body>
+</html>

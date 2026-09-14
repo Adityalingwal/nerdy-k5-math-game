@@ -1,0 +1,976 @@
+/* ==========================================================================
+   Equalizer Lab — scripted concept prototype (D-013)
+   Original CSS written for this prototype. No third-party font, image, icon,
+   sprite sheet or audio. System font stack only.
+   ========================================================================== */
+
+:root {
+  /* Material language from the brief: dark indigo workshop, electric cyan
+     rails, warm amber energy cells, coral imbalance, mint equality. */
+  --ink: #0b0a24;
+  --ink-2: #141238;
+  --panel: #1b1947;
+  --panel-2: #232057;
+  --edge: #3a3781;
+  --edge-soft: #2c2a66;
+  --text: #eef0ff;
+  --text-dim: #b5b9e6;
+  --cyan: #52e6ff;
+  --cyan-deep: #1d7fa8;
+  --amber: #ffb443;
+  --amber-soft: #ffd98a;
+  --coral: #ff7a6b;
+  --mint: #5ef0b6;
+  --focus: #ffe07a;
+
+  /* One unit cell. Both rails always use this same value. */
+  --cell: 30px;
+  --cell-gap: 3px;
+  --tap: 44px;
+  --radius: 14px;
+  --motion: 220ms;
+
+  --font: ui-rounded, "SF Pro Rounded", "Segoe UI Variable Display", "Segoe UI",
+    system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+  --font-num: ui-rounded, "SF Pro Rounded", system-ui, -apple-system, "Segoe UI",
+    Arial, sans-serif;
+
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Several containers below set `display`, which would otherwise beat the user
+   agent's `[hidden]` rule. */
+[hidden] {
+  display: none !important;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  background:
+    radial-gradient(120% 80% at 50% 0%, #221f57 0%, rgba(34, 31, 87, 0) 60%),
+    radial-gradient(90% 60% at 50% 100%, #171543 0%, rgba(23, 21, 67, 0) 70%),
+    var(--ink);
+  color: var(--text);
+  font-family: var(--font);
+  font-size: 16px;
+  line-height: 1.45;
+  -webkit-text-size-adjust: 100%;
+}
+
+.sprite {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+.app {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 10px 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* ---------------------------------------------------------------- topbar */
+
+.topbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.chip {
+  margin: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 7px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--edge);
+  background: rgba(27, 25, 71, 0.85);
+  font-size: 13px;
+  letter-spacing: 0.01em;
+}
+
+.chip-objective {
+  color: var(--text);
+}
+
+.chip-key {
+  color: var(--cyan);
+}
+
+.chip-banner {
+  color: var(--amber-soft);
+  border-color: #6b5426;
+  background: rgba(74, 56, 20, 0.5);
+  font-weight: 600;
+}
+
+.chip-toggle {
+  margin-left: auto;
+  min-height: var(--tap);
+  min-width: var(--tap);
+  padding: 7px 16px;
+  color: var(--text);
+  font-family: inherit;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.chip-toggle[aria-expanded='true'] {
+  border-color: var(--cyan);
+  color: var(--cyan);
+}
+
+/* ------------------------------------------------------------ test paths */
+
+.paths-panel {
+  border: 1px dashed var(--edge);
+  border-radius: var(--radius);
+  background: rgba(20, 18, 56, 0.9);
+  padding: 12px;
+}
+
+.paths-note {
+  margin: 0 0 10px;
+  font-size: 12.5px;
+  color: var(--text-dim);
+}
+
+.paths-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 8px;
+}
+
+.path-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  min-height: var(--tap);
+  padding: 9px 12px;
+  border-radius: 10px;
+  border: 1px solid var(--edge);
+  background: var(--panel-2);
+  color: var(--text);
+  font-family: inherit;
+  font-size: 13px;
+  text-align: left;
+  cursor: pointer;
+}
+
+.path-btn[aria-pressed='true'] {
+  border-color: var(--cyan);
+  box-shadow: inset 0 0 0 1px var(--cyan);
+}
+
+.path-btn .path-id {
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.path-btn .path-sub {
+  color: var(--text-dim);
+  font-size: 12px;
+}
+
+/* ----------------------------------------------------------------- stage */
+
+.stage {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 290px;
+  gap: 12px;
+  align-items: start;
+}
+
+.playfield {
+  min-width: 0;
+  border-radius: 18px;
+  border: 1px solid var(--edge-soft);
+  background:
+    linear-gradient(180deg, rgba(82, 230, 255, 0.06), rgba(82, 230, 255, 0) 45%),
+    var(--ink-2);
+  padding: 10px 12px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+/* -------------------------------------------------------------- equation */
+
+.equation {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-family: var(--font-num);
+  font-size: 27px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.eq-num,
+.eq-op {
+  padding: 2px 4px;
+}
+
+.eq-op {
+  color: var(--text-dim);
+  font-weight: 500;
+}
+
+.eq-eq {
+  color: var(--cyan);
+}
+
+.eq-blank {
+  min-width: 54px;
+  padding: 2px 10px;
+  border-radius: 10px;
+  border: 2px dashed var(--amber);
+  background: rgba(255, 180, 67, 0.12);
+  color: var(--amber-soft);
+  text-align: center;
+}
+
+.eq-blank[data-empty='true'] {
+  color: var(--text-dim);
+}
+
+/* ---------------------------------------------------------------- bridge */
+
+.bridge {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 9px;
+  padding: 9px 8px;
+  border-radius: 16px;
+  background: linear-gradient(180deg, rgba(13, 11, 40, 0.8), rgba(13, 11, 40, 0.35));
+  border: 1px solid var(--edge-soft);
+}
+
+/* Side-on bridge: the two rails meet the = core left-to-right when there is
+   room. Below 901 px they stack, so 29 unit cells still fit at one unit size. */
+@media (min-width: 901px) {
+  .bridge {
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+    align-items: center;
+    gap: 10px;
+  }
+
+  .core {
+    flex-direction: column;
+    gap: 2px;
+    padding: 10px 8px;
+  }
+
+  .core-state {
+    writing-mode: horizontal-tb;
+    font-size: 10.5px;
+    max-width: 76px;
+    text-align: center;
+    line-height: 1.2;
+  }
+}
+
+.rail {
+  min-width: 0;
+  border-radius: 14px;
+  padding: 7px 8px 5px;
+  background: rgba(82, 230, 255, 0.06);
+  border: 1px solid rgba(82, 230, 255, 0.25);
+  border-left-width: 4px;
+  transition: transform var(--motion) ease, border-color var(--motion) ease;
+}
+
+/* The tilt is deliberately small: it is a secondary signal beside the core
+   text, the border state and the side totals, and a large rotation would push
+   a rail's bounding box into its neighbour on narrow screens. */
+.bridge[data-balance='unequal'] .rail-left {
+  transform: rotate(-0.5deg);
+}
+
+.bridge[data-balance='unequal'] .rail-right {
+  transform: rotate(0.5deg);
+}
+
+.bridge[data-balance='equal'] .rail {
+  border-color: var(--mint);
+}
+
+.bridge[data-balance='unequal'] .rail {
+  border-color: var(--coral);
+}
+
+.rail-name {
+  margin: 0 0 5px;
+  font-size: 11.5px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+
+.rail-total {
+  margin: 5px 0 0;
+  font-size: 13.5px;
+  font-weight: 700;
+  font-family: var(--font-num);
+  color: var(--amber-soft);
+}
+
+.rail-groups {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.group {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 4px;
+  border-radius: 10px;
+  border: 1px solid rgba(238, 240, 255, 0.16);
+  background: rgba(11, 10, 36, 0.45);
+}
+
+.group[data-role='missing'] {
+  border-color: var(--amber);
+  border-style: dashed;
+}
+
+.group-cells {
+  /* Five-frame: at most five unit cells per row, so 22+ cells stay readable
+     at 390 px without changing the unit size. */
+  display: grid;
+  grid-template-columns: repeat(5, var(--cell));
+  gap: var(--cell-gap);
+  min-height: var(--cell);
+}
+
+.group-label {
+  font-size: 11.5px;
+  color: var(--text-dim);
+  font-family: var(--font-num);
+  letter-spacing: 0.03em;
+}
+
+.cell {
+  width: var(--cell);
+  height: var(--cell);
+  border-radius: 7px;
+  background: linear-gradient(180deg, var(--amber-soft), var(--amber));
+  border: 1px solid #ffe7bb;
+  position: relative;
+}
+
+.cell::after {
+  content: '';
+  position: absolute;
+  inset: 22% 30%;
+  border-radius: 3px;
+  background: rgba(58, 33, 6, 0.45);
+}
+
+.group[data-role='missing'] .cell {
+  background: linear-gradient(180deg, #ffe9b8, #ffc35c);
+}
+
+.group-empty {
+  grid-column: 1 / -1;
+  font-size: 11.5px;
+  color: var(--text-dim);
+  line-height: var(--cell);
+}
+
+/* Unit matching. Shape is carried by the marker as well as the colour, so
+   colour is never the only signal. */
+.bridge[data-matching='on'] .cell[data-match='matched'] {
+  background: #4b4a70;
+  border-color: #6d6c96;
+  opacity: 0.75;
+}
+
+.bridge[data-matching='on'] .cell[data-match='matched']::after {
+  inset: 18% 18%;
+  border-radius: 50%;
+  background: rgba(238, 240, 255, 0.55);
+}
+
+.bridge[data-matching='on'] .cell[data-match='leftover'] {
+  box-shadow: 0 0 0 2px var(--coral);
+}
+
+.bridge[data-matching='on'] .cell[data-match='leftover']::after {
+  inset: 20% 20%;
+  border-radius: 50%;
+  background: transparent;
+  border: 2px solid #5a2418;
+}
+
+.cell[data-counted='now'] {
+  box-shadow: 0 0 0 3px var(--cyan);
+}
+
+.cell[data-counted='done'] {
+  outline: 2px solid rgba(82, 230, 255, 0.55);
+  outline-offset: -2px;
+}
+
+/* The symbolic transfer scaffold removes the rails entirely and leaves only
+   the equation and the = core. */
+.bridge[data-scaffold='SYMBOLIC_ONLY'] .rail {
+  display: none;
+}
+
+.bridge[data-scaffold='SYMBOLIC_ONLY'] {
+  justify-content: center;
+}
+
+/* Faded rails for the transfer scaffold. */
+.bridge[data-faded='true'] .rail-groups {
+  opacity: 0.34;
+}
+
+/* Path D's neutral compare tool outlines each COMPLETE side. It deliberately
+   prints no numerals, so it never leaks the hint ladder's side totals. */
+.bridge[data-compare='on'] .rail {
+  outline: 3px dashed var(--cyan);
+  outline-offset: 3px;
+}
+
+.bridge[data-compare='on'] .rail-name::after {
+  content: ' — one complete side';
+  color: var(--cyan);
+}
+
+.core {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--edge);
+  background: rgba(11, 10, 36, 0.7);
+  font-family: var(--font-num);
+  transition: border-color var(--motion) ease, box-shadow var(--motion) ease;
+}
+
+.core-sign {
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--cyan);
+}
+
+.core-state {
+  font-size: 12px;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+
+.bridge[data-balance='equal'] .core {
+  border-color: var(--mint);
+}
+
+.bridge[data-balance='equal'] .core-state {
+  color: var(--mint);
+}
+
+.bridge[data-balance='unequal'] .core {
+  border-color: var(--coral);
+}
+
+.bridge[data-balance='unequal'] .core-state {
+  color: var(--coral);
+}
+
+.bridge[data-pulse='on'] .core {
+  box-shadow: 0 0 0 4px rgba(94, 240, 182, 0.28);
+}
+
+/* ---------------------------------------------------------------- status */
+
+.status {
+  margin: 0;
+  min-height: 40px;
+  padding: 8px 12px;
+  border-radius: 12px;
+  border: 1px solid var(--edge-soft);
+  background: rgba(11, 10, 36, 0.55);
+  font-size: 14.5px;
+  color: var(--text);
+}
+
+.status[data-tone='bad'] {
+  border-color: rgba(255, 122, 107, 0.65);
+}
+
+.status[data-tone='good'] {
+  border-color: rgba(94, 240, 182, 0.6);
+}
+
+.status .status-key {
+  font-weight: 700;
+  margin-right: 6px;
+}
+
+.status[data-tone='bad'] .status-key {
+  color: var(--coral);
+}
+
+.status[data-tone='good'] .status-key {
+  color: var(--mint);
+}
+
+/* ------------------------------------------------------------------ side */
+
+.side {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.bot {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 9px 10px;
+  border-radius: 16px;
+  border: 1px solid var(--edge-soft);
+  background: var(--ink-2);
+}
+
+.bot-art {
+  width: 66px;
+  height: 72px;
+  flex: 0 0 auto;
+}
+
+.bot[data-mood='worried'] .bot-mouth {
+  d: path('M38 64 Q48 57 58 64');
+}
+
+.bot[data-mood='worried'] .bot-lamp {
+  fill: var(--coral);
+}
+
+.bot[data-mood='thinking'] .bot-lamp {
+  fill: var(--cyan);
+}
+
+.bot[data-mood='happy'] .bot-mouth {
+  d: path('M38 59 Q48 68 58 59');
+}
+
+.bot[data-mood='happy'] .bot-lamp {
+  fill: var(--mint);
+}
+
+.bot-line {
+  margin: 0;
+  font-size: 14.5px;
+}
+
+.explanation {
+  padding: 10px 12px;
+  border-radius: 16px;
+  border: 1px solid var(--edge-soft);
+  background: var(--panel);
+}
+
+.exp-head {
+  margin: 0 0 6px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 6px;
+}
+
+.exp-tag {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--cyan);
+}
+
+.exp-sub {
+  font-size: 11.5px;
+  color: var(--text-dim);
+}
+
+.exp-note {
+  margin: 0 0 6px;
+  padding: 8px 10px;
+  border-left: 3px solid var(--edge);
+  border-radius: 0 8px 8px 0;
+  background: rgba(11, 10, 36, 0.5);
+  font-size: 14px;
+}
+
+.exp-trace {
+  margin: 0;
+  font-family: var(--font-num);
+  font-size: 12.5px;
+  color: var(--text-dim);
+}
+
+.exp-read {
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px dashed var(--edge);
+}
+
+.exp-read-line {
+  margin: 0 0 4px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  font-size: 12.5px;
+}
+
+.exp-read-key {
+  color: var(--text-dim);
+}
+
+.exp-read-label,
+.exp-read-probe {
+  font-family: var(--font-num);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--amber-soft);
+}
+
+.exp-read-foot {
+  margin: 4px 0 0;
+  font-size: 11.5px;
+  color: var(--text-dim);
+}
+
+/* ----------------------------------------------------------------- tools */
+
+.tools {
+  border-radius: 16px;
+  border: 1px solid var(--edge-soft);
+  background: var(--panel);
+  padding: 8px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+/* One band on wide screens: tray label, path tools and the number pod share a
+   row so the playfield keeps the vertical space. */
+@media (min-width: 901px) {
+  .tools {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .tools-head {
+    flex: 0 0 auto;
+  }
+}
+
+.tools-head {
+  margin: 0;
+  font-size: 12px;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+
+.tools-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tool-btn {
+  min-height: var(--tap);
+  min-width: var(--tap);
+  padding: 8px 14px;
+  border-radius: 11px;
+  border: 1px solid var(--edge);
+  background: var(--panel-2);
+  color: var(--text);
+  font-family: inherit;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.tool-btn:hover:not(:disabled) {
+  border-color: var(--cyan);
+}
+
+.tool-btn[aria-pressed='true'] {
+  border-color: var(--cyan);
+  background: rgba(82, 230, 255, 0.14);
+  color: var(--cyan);
+}
+
+.tool-btn:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+
+.pod {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.pod-label {
+  font-size: 13px;
+  color: var(--text-dim);
+}
+
+.pod-btn {
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1;
+  padding: 0 14px;
+}
+
+.pod-value {
+  min-width: 58px;
+  min-height: var(--tap);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 11px;
+  border: 2px solid var(--amber);
+  background: rgba(255, 180, 67, 0.12);
+  color: var(--amber-soft);
+  font-family: var(--font-num);
+  font-size: 22px;
+  font-weight: 800;
+}
+
+/* -------------------------------------------------------------- controls */
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.btn {
+  min-height: var(--tap);
+  min-width: var(--tap);
+  padding: 10px 20px;
+  border-radius: 12px;
+  border: 1px solid var(--edge);
+  background: var(--panel-2);
+  color: var(--text);
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn:hover:not(:disabled) {
+  border-color: var(--cyan);
+}
+
+.btn.primary {
+  background: linear-gradient(180deg, #59e9ff, #2ea6cf);
+  border-color: #8ff2ff;
+  color: #06202b;
+}
+
+.btn.choice {
+  flex: 1 1 200px;
+  text-align: left;
+}
+
+.btn:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+
+:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+}
+
+/* -------------------------------------------------------------- footnote */
+
+.footnote {
+  margin-top: 2px;
+}
+
+.footnote p {
+  margin: 0;
+  font-size: 11px;
+  color: var(--text-dim);
+}
+
+/* ------------------------------------------------------------ responsive */
+
+@media (max-width: 900px) {
+  /* One column. The bot stays with the playfield, the controls come next, and
+     the read-only explanation drops below them so the primary action is not
+     pushed off a 720 px-tall phone screen. */
+  .stage,
+  .side {
+    display: contents;
+  }
+
+  .topbar {
+    order: 1;
+  }
+  .paths-panel {
+    order: 2;
+  }
+  .playfield {
+    order: 3;
+  }
+  .bot {
+    order: 4;
+  }
+  .tools {
+    order: 5;
+  }
+  .controls {
+    order: 6;
+  }
+  .explanation {
+    order: 7;
+  }
+  .footnote {
+    order: 8;
+  }
+
+  .bot-art {
+    width: 52px;
+    height: 58px;
+  }
+
+  .bot-line {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 560px) {
+  :root {
+    --cell: 25px;
+    --cell-gap: 2px;
+  }
+
+  .app {
+    padding: 8px 10px 18px;
+    gap: 7px;
+  }
+
+  .equation {
+    font-size: 23px;
+    gap: 5px;
+  }
+
+  .playfield {
+    padding: 10px 8px 10px;
+    gap: 9px;
+  }
+
+  .rail-groups {
+    gap: 7px;
+  }
+
+  .group {
+    padding: 4px;
+  }
+
+  /* Two topbar rows, not three: the objective takes its own line and the
+     no-runtime-AI banner shares a line with the Test paths control. */
+  .chip {
+    font-size: 11.5px;
+    padding: 6px 10px;
+    gap: 5px;
+  }
+
+  .chip-objective {
+    flex: 1 1 100%;
+  }
+
+  .chip-banner {
+    flex: 1 1 auto;
+  }
+
+  .chip-toggle {
+    flex: 0 0 auto;
+    margin-left: auto;
+    padding: 6px 12px;
+  }
+
+  .core {
+    padding: 2px 8px;
+  }
+
+  .core-sign {
+    font-size: 22px;
+  }
+
+  .core-state {
+    font-size: 11px;
+  }
+
+  .status {
+    font-size: 14px;
+    padding: 7px 10px;
+  }
+
+  .bot {
+    padding: 8px 9px;
+  }
+
+  .bridge {
+    gap: 7px;
+    padding: 8px 7px;
+  }
+
+  .playfield {
+    gap: 7px;
+  }
+}
+
+@media (max-width: 360px) {
+  :root {
+    --cell: 22px;
+  }
+
+  .equation {
+    font-size: 22px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition-duration: 0s !important;
+    animation-duration: 0s !important;
+    animation-iteration-count: 1 !important;
+  }
+}
