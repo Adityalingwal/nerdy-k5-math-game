@@ -250,6 +250,16 @@ Last updated: 2026-09-14
   of repetitive generated prototype screenshots remain excluded. No
   open-source license or final product selection was made.
 
+- 2026-09-14: Published the D-015 public research and prototype archive to
+  `origin/main` through four purpose-separated commits: repository hygiene
+  (`5cd3668`), research and decisions (`3ec25cd`), Decimal Dock reference app
+  (`59c69a8`), and rejected concept archives (`afaecd5`). Fresh pre-push checks:
+  `npm test` 81/81, `npm run build`, Equal-Sign Repair harness self-checks
+  14/14, experiment typecheck, staged whitespace checks and tracked secret scan
+  all passed. The remote was 0 commits ahead before the push. Bulk generated
+  prototype PNGs and local/private material remain untracked and were not
+  deleted.
+
 ## Current checkpoint
 
 Final concept selection remains open. Decimal Dock remains preserved. Mission
@@ -262,9 +272,9 @@ authorized.
 
 Immediate:
 
-- Publish the D-015 repository boundary through separate hygiene,
-  documentation, reference-app and archived-experiment commits; verify tests,
-  build and secret exclusions before pushing.
+- Prepare a concise collaborator handoff that points to the index, concept
+  status, run commands and contribution-rights boundary before accepting new
+  work from another person.
 - Do not resume Mission Forge or Equal-Sign Repair work. Preserve Decimal Dock
   and both closed experiments as reference material until the final concept is
   deliberately selected.
