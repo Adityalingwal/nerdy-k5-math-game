@@ -1,0 +1,27 @@
+{
+  "name": "decimal-dock",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Decimal Dock - a browser math game for the longer-is-larger decimal misconception.",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "ai-value-test": "tsx scripts/ai-value-test.ts",
+    "capture": "tsx scripts/capture-screens.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "playwright-core": "^1.63.0",
+    "tsx": "^4.23.13",
+    "typescript": "^5.9.0",
+    "vite": "^7.0.0",
+    "vitest": "^3.0.0"
+  },
+  "dependencies": {
+    "pixi.js": "^8.20.1"
+  }
+}

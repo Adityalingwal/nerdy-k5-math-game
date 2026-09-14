@@ -1,0 +1,408 @@
+/*
+ * Decimal Dock styling.
+ *
+ * System font stack only: no downloaded fonts, no third-party CSS.
+ * The game is a fixed 1280x720 box that scales to fit the window, and the DOM
+ * overlay sits inside the same box, so panels never push the canvas around.
+ */
+
+:root {
+  --stage-w: 1280;
+  --stage-h: 720;
+  --ink: #f4efe4;
+  --ink-dim: #b9c9d6;
+  --sea: #0d2436;
+  --deck: #c8a06a;
+  --lamp: #ffd166;
+  --good: #7fd1c1;
+  --try: #f0a868;
+  --panel: rgba(9, 26, 39, 0.94);
+  --font: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial,
+    sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background: #071723;
+  color: var(--ink);
+  font-family: var(--font);
+  overflow: hidden;
+}
+
+#app {
+  position: relative;
+  width: 1280px;
+  height: 720px;
+  min-width: 1024px;
+  margin: 0 auto;
+  transform-origin: top center;
+}
+
+.stage canvas {
+  display: block;
+  width: 1280px;
+  height: 720px;
+  border-radius: 10px;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.overlay > * {
+  pointer-events: auto;
+}
+
+/* ------------------------------- banner -------------------------------- */
+
+.banner {
+  position: absolute;
+  top: 104px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  display: none;
+  padding: 0 40px;
+}
+
+.banner.shown {
+  display: block;
+}
+
+.prompt {
+  margin: 0;
+  font-size: 30px;
+  font-weight: 650;
+  letter-spacing: 0.2px;
+}
+
+.hint {
+  margin: 6px 0 0;
+  font-size: 16px;
+  color: var(--ink-dim);
+}
+
+.toast {
+  position: absolute;
+  top: 240px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px 22px;
+  border-radius: 999px;
+  background: rgba(9, 26, 39, 0.92);
+  border: 2px solid var(--ink-dim);
+  font-size: 20px;
+  display: none;
+  max-width: 900px;
+  text-align: center;
+}
+
+.toast.shown {
+  display: block;
+}
+
+.toast[data-tone='good'] {
+  border-color: var(--good);
+  color: var(--good);
+}
+
+.toast[data-tone='try'] {
+  border-color: var(--try);
+  color: var(--try);
+}
+
+/* -------------------------------- panels ------------------------------- */
+
+.panel,
+.card {
+  position: absolute;
+  background: var(--panel);
+  border: 2px solid rgba(200, 160, 106, 0.55);
+  border-radius: 18px;
+  padding: 24px 28px;
+  display: none;
+}
+
+.panel.shown,
+.card.shown {
+  display: block;
+}
+
+.card {
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 720px;
+  text-align: left;
+}
+
+.card.low {
+  top: auto;
+  bottom: 18px;
+  transform: translateX(-50%);
+  width: 880px;
+}
+
+.card-title {
+  margin: 0 0 12px;
+  font-size: 26px;
+}
+
+.card-body p {
+  margin: 0 0 10px;
+  font-size: 20px;
+  line-height: 1.45;
+}
+
+.card-actions {
+  margin-top: 18px;
+  display: flex;
+  gap: 12px;
+}
+
+.profile-panel {
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 860px;
+  text-align: center;
+}
+
+.title {
+  margin: 0;
+  font-size: 44px;
+  letter-spacing: 0.5px;
+}
+
+.lead {
+  margin: 8px 0 4px;
+  font-size: 20px;
+  color: var(--ink);
+}
+
+.note {
+  margin: 0 0 18px;
+  font-size: 16px;
+  color: var(--ink-dim);
+}
+
+.profile-list {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+}
+
+.profile-button {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 14px 10px;
+  border-radius: 14px;
+  border: 2px solid rgba(200, 160, 106, 0.5);
+  background: rgba(18, 60, 83, 0.7);
+  color: var(--ink);
+  font-family: var(--font);
+  cursor: pointer;
+  text-align: center;
+}
+
+.profile-button:hover,
+.profile-button:focus-visible {
+  border-color: var(--lamp);
+  outline: none;
+}
+
+.profile-name {
+  font-size: 19px;
+  font-weight: 650;
+}
+
+.profile-blurb {
+  font-size: 13px;
+  color: var(--ink-dim);
+  line-height: 1.3;
+}
+
+.small-print {
+  margin: 16px 0 0;
+  font-size: 13px;
+  color: var(--ink-dim);
+}
+
+/* --------------------------------- why --------------------------------- */
+
+.why-panel {
+  left: 50%;
+  bottom: 24px;
+  transform: translateX(-50%);
+  width: 760px;
+}
+
+.why-question {
+  margin: 0 0 10px;
+  font-size: 21px;
+}
+
+.why-input {
+  width: 100%;
+  font-family: var(--font);
+  font-size: 18px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 2px solid rgba(200, 160, 106, 0.5);
+  background: #0b2233;
+  color: var(--ink);
+  resize: none;
+}
+
+.why-actions {
+  margin-top: 12px;
+  display: flex;
+  gap: 10px;
+}
+
+/* ------------------------------- buttons ------------------------------- */
+
+.btn {
+  font-family: var(--font);
+  font-size: 18px;
+  padding: 10px 22px;
+  border-radius: 999px;
+  border: 2px solid transparent;
+  cursor: pointer;
+}
+
+.btn.primary {
+  background: var(--lamp);
+  color: #26333d;
+  font-weight: 650;
+}
+
+.btn.ghost {
+  background: transparent;
+  color: var(--ink);
+  border-color: rgba(200, 160, 106, 0.6);
+}
+
+.btn.small {
+  font-size: 15px;
+  padding: 7px 16px;
+  background: rgba(18, 60, 83, 0.85);
+  color: var(--ink);
+  border-color: rgba(200, 160, 106, 0.5);
+}
+
+.btn:focus-visible {
+  outline: 3px solid var(--lamp);
+  outline-offset: 2px;
+}
+
+.controls {
+  position: absolute;
+  right: 24px;
+  bottom: 24px;
+  display: none;
+  gap: 8px;
+}
+
+.controls.shown {
+  display: flex;
+}
+
+/* --------------------------------- robo -------------------------------- */
+
+.robo {
+  margin-top: 14px;
+  padding: 14px 16px;
+  border-radius: 14px;
+  background: rgba(224, 122, 95, 0.14);
+  border: 2px solid rgba(224, 122, 95, 0.55);
+}
+
+.robo-face {
+  display: inline-block;
+  font-size: 13px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #f0a68f;
+}
+
+.robo-claim {
+  margin: 6px 0 4px;
+  font-size: 24px;
+  font-weight: 650;
+}
+
+.robo-reason {
+  margin: 0;
+  font-size: 19px;
+}
+
+.robo-source {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 12px;
+  color: var(--ink-dim);
+}
+
+/* --------------------------------- gear -------------------------------- */
+
+.gear {
+  position: absolute;
+  top: 18px;
+  right: 22px;
+  font-family: var(--font);
+  font-size: 14px;
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: rgba(9, 26, 39, 0.8);
+  color: var(--ink-dim);
+  border: 2px solid rgba(200, 160, 106, 0.4);
+  cursor: pointer;
+}
+
+.gear-panel {
+  top: 60px;
+  right: 22px;
+  width: 340px;
+}
+
+.gear-panel h3 {
+  margin: 0 0 12px;
+  font-size: 18px;
+}
+
+.gear-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+  font-size: 15px;
+}
+
+.gear-row select,
+.gear-row input[type='text'] {
+  font-family: var(--font);
+  font-size: 15px;
+  padding: 5px 8px;
+  border-radius: 8px;
+  border: 2px solid rgba(200, 160, 106, 0.5);
+  background: #0b2233;
+  color: var(--ink);
+}
+
+.gear-row input[type='checkbox'] {
+  width: 22px;
+  height: 22px;
+  accent-color: var(--lamp);
+}
