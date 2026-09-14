@@ -9,12 +9,15 @@ coverage/
 .next/
 .vite/
 *.log
+.vercel/
+test-results/
+outputs/
+work/
+
+# Generated browser-proof images stay local; scripts and text logs are tracked.
+docs/evidence/prototypes/**/*.png
 
 # Local project context and private working material
-AGENTS.md
-CLAUDE.md
-docs/
-references/
 notes/
 private/
 .local/
