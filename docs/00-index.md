@@ -37,6 +37,10 @@ Last reviewed: 2026-09-14
 
 ## Read in this order
 
+0. [Collaborator onboarding and handoff](collaborator-handoff.md) - the short
+   zero-knowledge reading, verification and contribution path. Its
+   [copy-paste AI prompt](prompts/brother-onboarding-prompt.md) is read-only on
+   the first pass.
 1. [Hackathon brief](hackathon-brief.md) - what Nerdy is asking for.
 2. [Rules and compliance](rules-and-compliance.md) - hard submission, IP,
    licensing, privacy, and testing constraints.

@@ -31,6 +31,9 @@ Current product-selection state:
   private notes, local agent state or bulk generated prototype screenshots.
   Public visibility does not reactivate a dropped concept or grant an
   open-source license.
+- A zero-knowledge collaborator must follow `docs/collaborator-handoff.md`.
+  Its first-pass prompt is deliberately read-only: understand, verify and
+  report before proposing implementation.
 
 For the historical Mission Forge record, read:
 

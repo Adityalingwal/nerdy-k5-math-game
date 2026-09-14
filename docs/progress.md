@@ -260,6 +260,13 @@ Last updated: 2026-09-14
   prototype PNGs and local/private material remain untracked and were not
   deleted.
 
+- 2026-09-14: Added a zero-knowledge collaborator handoff and copy-paste
+  Claude/Codex onboarding prompt. The first session now uses a bounded reading
+  order, fresh install/test/build checks and inspection of all three runnable
+  paths, then stops at a report separating verified facts, recorded decisions,
+  product judgment, unresolved issues and one next research task. It authorizes
+  no code change, API key, model call, branch, commit, push or deployment.
+
 ## Current checkpoint
 
 Final concept selection remains open. Decimal Dock remains preserved. Mission
@@ -272,9 +279,8 @@ authorized.
 
 Immediate:
 
-- Prepare a concise collaborator handoff that points to the index, concept
-  status, run commands and contribution-rights boundary before accepting new
-  work from another person.
+- Have the new collaborator run the read-only onboarding prompt and return the
+  required assessment before assigning any implementation work.
 - Do not resume Mission Forge or Equal-Sign Repair work. Preserve Decimal Dock
   and both closed experiments as reference material until the final concept is
   deliberately selected.

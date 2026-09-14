@@ -8,6 +8,9 @@ learning.
 
 Start with [`docs/00-index.md`](docs/00-index.md), then read
 [`docs/decision-log.md`](docs/decision-log.md) for the exact selection history.
+New collaborators should follow
+[`docs/collaborator-handoff.md`](docs/collaborator-handoff.md) and use the
+linked read-only onboarding prompt before proposing changes.
 
 ## Current concept status
 
