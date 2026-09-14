@@ -1,0 +1,25 @@
+== Equalizer Lab verification ==
+url: http://localhost:5173/prototypes/equal-sign-repair/
+started: 2026-09-14T05:04:24.643Z
+
+[1] desktop 1280x720 — four paths end to end, pointer
+
+[2] narrow 390x844 — four paths end to end, touch
+
+[3] narrow 390x720 — default path end to end
+
+[4] desktop — Path D clarification to transfer-scaffold mapping
+
+[5] desktop — Replay and A→B→C→D switching on one page, no reload
+
+[6] desktop — keyboard-only completion of OPERATIONAL_EQUAL
+
+[7] desktop + narrow — prefers-reduced-motion: reduce
+
+[8] console and network
+  request origins: http://localhost:5173
+
+== result ==
+checks passed: 564
+checks failed: 0
+finished: 2026-09-14T05:04:52.080Z

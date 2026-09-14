@@ -1,0 +1,122 @@
+PASS  run1-desktop-pointer: first action visible in 145 ms
+PASS  run1-desktop-pointer: disclosure badge text exact
+      saved 01-opening.png
+PASS  run1-desktop-pointer: story textarea editable and prefilled
+PASS  run1-desktop-pointer: unsupported story refused honestly
+      saved 02-story-forge.png
+PASS  run1-desktop-pointer: compile maps 12/3/4 to ["total crystals","crystals per ship","number of ships"]
+      saved 03-compile-reveal.png
+PASS  run1-desktop-pointer: compile shows "Local script matched ... No AI is running." note
+PASS  run1-desktop-pointer: Robo builds 3 ships x 4/4/4 with 0 left
+PASS  run1-desktop-pointer: world chips ["3 ships","4 in each ship","0 left"]
+PASS  run1-desktop-pointer: Robo mood is confidently wrong (wrong)
+      saved 04-robo-wrong-world.png
+PASS  run1-desktop-pointer: scanner shows "MISSION SCANStory: 3 in each ship≠World: 4 in each ship"
+PASS  run1-desktop-pointer: mismatch chip uses ≠ + dashed text cue (1)
+      saved 04b-scanner-mismatch.png
+PASS  run1-desktop-pointer: wrong identify gets a story-pointing hint
+PASS  run1-desktop-pointer: repair starts with 1 empty ship and 12 crystals
+PASS  run1-desktop-pointer: repeating 4 reproduces Robo's world and is rejected
+PASS  run1-desktop-pointer: tap + drag loads 3 crystals (ship 3, pile 9)
+PASS  run1-desktop-pointer: repaired world = 4 ships x 3, 0 left
+      saved 05a-repaired-world.png
+      saved 05-corrected-launch.png
+      saved 05b-teach-robo.png
+PASS  run1-desktop-pointer: swapped teach answers are flagged
+PASS  run1-desktop-pointer: Robo restates "Got it! 3 was crystals in each ship, and 4 was the number of ships."
+PASS  run1-desktop-pointer: Robo mood understood
+      saved 05c-robo-restates.png
+PASS  run1-desktop-pointer: transfer equation numbers 20,5,4
+PASS  run1-desktop-pointer: 5 fixed rovers before acting, 20 batteries
+      saved 06-transfer-mission.png
+PASS  run1-desktop-pointer: 5-per-rover leaves rover 5 empty and is rejected
+      saved 06b-transfer-divisor-as-size.png
+PASS  run1-desktop-pointer: 4 per rover passes (5 x 4, 0 left)
+PASS  run1-desktop-pointer: wrong unit answer gets a hint
+      saved 06c-transfer-understood.png
+PASS  run1-desktop-pointer: summary "You taught Robo: division can ask for group size or number of groups."
+      saved 07-final-summary.png
+      run 1 wall time 40 s (scripted, no reading pauses)
+PASS  review: "Back to concept review" resets and scrolls to review (0)
+PASS  run2-desktop-keyboard: after Replay, focus is on "Forge a mission"
+PASS  run2-desktop-keyboard: Replay reset every state without reload
+PASS  run2-desktop-keyboard: Replay reset equation card to 12 ÷ 3 = 4 with no tags
+PASS  run2-desktop-keyboard: focus moves into the story box
+PASS  run2-desktop-keyboard: alternate wording built the world via keyboard
+PASS  run2-desktop-keyboard: Tab reaches "No, debug it"
+PASS  run2-desktop-keyboard: Tab reaches "crystals per ship"
+PASS  run2-desktop-keyboard: focus on "+ Load a crystal"
+PASS  run2-desktop-keyboard: keyboard loaded 3 crystals
+PASS  run2-desktop-keyboard: Tab reaches "Repeat this group"
+PASS  run2-desktop-keyboard: radios chosen by keyboard {"d":"groupSize","q":"groupCount"}
+PASS  run2-desktop-keyboard: Tab reaches "Teach Robo"
+PASS  run2-desktop-keyboard: Tab reaches "Fill every rover the same"
+PASS  run2-desktop-keyboard: Tab reaches "batteries in each rover"
+PASS  run2-desktop-keyboard: keyboard run reached summary; focus on Replay
+PASS  run2-desktop-keyboard: focused button shows a solid outline (solid)
+PASS  run2: Replay pressed with keyboard returns to opening
+PASS  run3-mobile-390: first action visible in 105 ms
+PASS  run3-mobile-390: disclosure badge text exact
+      saved 08-mobile-01-opening.png
+PASS  run3-mobile-390: story textarea editable and prefilled
+PASS  run3-mobile-390: unsupported story refused honestly
+      saved 08-mobile-02-forge.png
+PASS  run3-mobile-390: compile maps 12/3/4 to ["total crystals","crystals per ship","number of ships"]
+      saved 08-mobile-03-compile.png
+PASS  run3-mobile-390: compile shows "Local script matched ... No AI is running." note
+PASS  run3-mobile-390: Robo builds 3 ships x 4/4/4 with 0 left
+PASS  run3-mobile-390: world chips ["3 ships","4 in each ship","0 left"]
+PASS  run3-mobile-390: Robo mood is confidently wrong (wrong)
+      saved 08-mobile-04-robo-wrong.png
+PASS  run3-mobile-390: scanner shows "MISSION SCANStory: 3 in each ship≠World: 4 in each ship"
+PASS  run3-mobile-390: mismatch chip uses ≠ + dashed text cue (1)
+      saved 08-mobile-04b-scanner.png
+PASS  run3-mobile-390: wrong identify gets a story-pointing hint
+PASS  run3-mobile-390: repair starts with 1 empty ship and 12 crystals
+PASS  run3-mobile-390: repeating 4 reproduces Robo's world and is rejected
+PASS  run3-mobile-390: tap loads 3 crystals (ship 3, pile 9)
+PASS  run3-mobile-390: repaired world = 4 ships x 3, 0 left
+      saved 08-mobile-05-repaired.png
+PASS  run3-mobile-390: swapped teach answers are flagged
+PASS  run3-mobile-390: Robo restates "Got it! 3 was crystals in each ship, and 4 was the number of ships."
+PASS  run3-mobile-390: Robo mood understood
+PASS  run3-mobile-390: transfer equation numbers 20,5,4
+PASS  run3-mobile-390: 5 fixed rovers before acting, 20 batteries
+      saved 08-mobile-06-transfer.png
+PASS  run3-mobile-390: 5-per-rover leaves rover 5 empty and is rejected
+PASS  run3-mobile-390: 4 per rover passes (5 x 4, 0 left)
+PASS  run3-mobile-390: wrong unit answer gets a hint
+PASS  run3-mobile-390: summary "You taught Robo: division can ask for group size or number of groups."
+      saved 08-mobile-07-summary.png
+PASS  run3-mobile-390: no horizontal scroll (scrollWidth 390 <= 390)
+PASS  run4-reduced-motion: first action visible in 116 ms
+PASS  run4-reduced-motion: disclosure badge text exact
+PASS  run4-reduced-motion: story textarea editable and prefilled
+PASS  run4-reduced-motion: unsupported story refused honestly
+PASS  run4-reduced-motion: compile maps 12/3/4 to ["total crystals","crystals per ship","number of ships"]
+PASS  run4-reduced-motion: Robo builds 3 ships x 4/4/4 with 0 left
+PASS  run4-reduced-motion: world chips ["3 ships","4 in each ship","0 left"]
+PASS  run4-reduced-motion: Robo mood is confidently wrong (wrong)
+PASS  run4-reduced-motion: scanner shows "MISSION SCANStory: 3 in each ship≠World: 4 in each ship"
+PASS  run4-reduced-motion: mismatch chip uses ≠ + dashed text cue (1)
+PASS  run4-reduced-motion: wrong identify gets a story-pointing hint
+PASS  run4-reduced-motion: repair starts with 1 empty ship and 12 crystals
+PASS  run4-reduced-motion: repeating 4 reproduces Robo's world and is rejected
+PASS  run4-reduced-motion: tap + drag loads 3 crystals (ship 3, pile 9)
+PASS  run4-reduced-motion: repaired world = 4 ships x 3, 0 left
+PASS  run4-reduced-motion: swapped teach answers are flagged
+PASS  run4-reduced-motion: Robo restates "Got it! 3 was crystals in each ship, and 4 was the number of ships."
+PASS  run4-reduced-motion: Robo mood understood
+PASS  run4-reduced-motion: transfer equation numbers 20,5,4
+PASS  run4-reduced-motion: 5 fixed rovers before acting, 20 batteries
+PASS  run4-reduced-motion: 5-per-rover leaves rover 5 empty and is rejected
+PASS  run4-reduced-motion: 4 per rover passes (5 x 4, 0 left)
+PASS  run4-reduced-motion: wrong unit answer gets a hint
+PASS  run4-reduced-motion: summary "You taught Robo: division can ask for group size or number of groups."
+PASS  run4: reduced motion spawns no flying/beam elements (0)
+PASS  run4: CSS transitions collapse under reduced motion (0.001s)
+      run 4 wall time 9 s
+PASS  network: only localhost requests (http://localhost:5173)
+PASS  console: 0 errors/warnings
+
+97/97 checks passed

@@ -1,0 +1,284 @@
+== Equalizer Lab layout probe ==
+url: http://localhost:5173/prototypes/equal-sign-repair/
+started: 2026-09-14T05:04:53.121Z
+
+== 320x568 — OPERATIONAL_EQUAL ==
+  ok   320x568 OPERATIONAL_EQUAL paths-drawer-open (cells: 29)
+  ok   320x568 OPERATIONAL_EQUAL inspect (cells: 29)
+  ok   320x568 OPERATIONAL_EQUAL consequence (cells: 29)
+  ok   320x568 OPERATIONAL_EQUAL interpret (cells: 29)
+  ok   320x568 OPERATIONAL_EQUAL repair-start (cells: 29)
+  ok   320x568 OPERATIONAL_EQUAL repair-hint3 (cells: 29)
+  ok   320x568 OPERATIONAL_EQUAL settled (cells: 22)
+  ok   320x568 OPERATIONAL_EQUAL transfer (cells: 20)
+  ok   320x568 OPERATIONAL_EQUAL transfer-hint1 (cells: 20)
+  ok   320x568 OPERATIONAL_EQUAL summary (cells: 0)
+
+== 320x568 — ARITHMETIC_SLIP ==
+  ok   320x568 ARITHMETIC_SLIP paths-drawer-open (cells: 29)
+  ok   320x568 ARITHMETIC_SLIP inspect (cells: 23)
+  ok   320x568 ARITHMETIC_SLIP consequence (cells: 23)
+  ok   320x568 ARITHMETIC_SLIP interpret (cells: 23)
+  ok   320x568 ARITHMETIC_SLIP repair-start (cells: 23)
+  ok   320x568 ARITHMETIC_SLIP repair-hint3 (cells: 23)
+  ok   320x568 ARITHMETIC_SLIP settled (cells: 22)
+  ok   320x568 ARITHMETIC_SLIP transfer (cells: 0)
+  ok   320x568 ARITHMETIC_SLIP transfer-hint1 (cells: 0)
+  ok   320x568 ARITHMETIC_SLIP summary (cells: 0)
+
+== 320x568 — RELATIONAL_VALID ==
+  ok   320x568 RELATIONAL_VALID paths-drawer-open (cells: 29)
+  ok   320x568 RELATIONAL_VALID inspect (cells: 22)
+  ok   320x568 RELATIONAL_VALID consequence (cells: 22)
+  ok   320x568 RELATIONAL_VALID interpret (cells: 22)
+  ok   320x568 RELATIONAL_VALID transfer (cells: 0)
+  ok   320x568 RELATIONAL_VALID transfer-hint1 (cells: 0)
+  ok   320x568 RELATIONAL_VALID summary (cells: 0)
+
+== 320x568 — UNCLEAR ==
+  ok   320x568 UNCLEAR paths-drawer-open (cells: 29)
+  ok   320x568 UNCLEAR inspect (cells: 23)
+  ok   320x568 UNCLEAR consequence (cells: 23)
+  ok   320x568 UNCLEAR interpret (cells: 23)
+  ok   320x568 UNCLEAR clarify (cells: 23)
+  ok   320x568 UNCLEAR repair-start (cells: 23)
+  ok   320x568 UNCLEAR repair-hint3 (cells: 23)
+  ok   320x568 UNCLEAR settled (cells: 22)
+  ok   320x568 UNCLEAR transfer (cells: 20)
+  ok   320x568 UNCLEAR transfer-hint1 (cells: 20)
+  ok   320x568 UNCLEAR summary (cells: 0)
+
+== 360x640 — OPERATIONAL_EQUAL ==
+  ok   360x640 OPERATIONAL_EQUAL paths-drawer-open (cells: 29)
+  ok   360x640 OPERATIONAL_EQUAL inspect (cells: 29)
+  ok   360x640 OPERATIONAL_EQUAL consequence (cells: 29)
+  ok   360x640 OPERATIONAL_EQUAL interpret (cells: 29)
+  ok   360x640 OPERATIONAL_EQUAL repair-start (cells: 29)
+  ok   360x640 OPERATIONAL_EQUAL repair-hint3 (cells: 29)
+  ok   360x640 OPERATIONAL_EQUAL settled (cells: 22)
+  ok   360x640 OPERATIONAL_EQUAL transfer (cells: 20)
+  ok   360x640 OPERATIONAL_EQUAL transfer-hint1 (cells: 20)
+  ok   360x640 OPERATIONAL_EQUAL summary (cells: 0)
+
+== 360x640 — ARITHMETIC_SLIP ==
+  ok   360x640 ARITHMETIC_SLIP paths-drawer-open (cells: 29)
+  ok   360x640 ARITHMETIC_SLIP inspect (cells: 23)
+  ok   360x640 ARITHMETIC_SLIP consequence (cells: 23)
+  ok   360x640 ARITHMETIC_SLIP interpret (cells: 23)
+  ok   360x640 ARITHMETIC_SLIP repair-start (cells: 23)
+  ok   360x640 ARITHMETIC_SLIP repair-hint3 (cells: 23)
+  ok   360x640 ARITHMETIC_SLIP settled (cells: 22)
+  ok   360x640 ARITHMETIC_SLIP transfer (cells: 0)
+  ok   360x640 ARITHMETIC_SLIP transfer-hint1 (cells: 0)
+  ok   360x640 ARITHMETIC_SLIP summary (cells: 0)
+
+== 360x640 — RELATIONAL_VALID ==
+  ok   360x640 RELATIONAL_VALID paths-drawer-open (cells: 29)
+  ok   360x640 RELATIONAL_VALID inspect (cells: 22)
+  ok   360x640 RELATIONAL_VALID consequence (cells: 22)
+  ok   360x640 RELATIONAL_VALID interpret (cells: 22)
+  ok   360x640 RELATIONAL_VALID transfer (cells: 0)
+  ok   360x640 RELATIONAL_VALID transfer-hint1 (cells: 0)
+  ok   360x640 RELATIONAL_VALID summary (cells: 0)
+
+== 360x640 — UNCLEAR ==
+  ok   360x640 UNCLEAR paths-drawer-open (cells: 29)
+  ok   360x640 UNCLEAR inspect (cells: 23)
+  ok   360x640 UNCLEAR consequence (cells: 23)
+  ok   360x640 UNCLEAR interpret (cells: 23)
+  ok   360x640 UNCLEAR clarify (cells: 23)
+  ok   360x640 UNCLEAR repair-start (cells: 23)
+  ok   360x640 UNCLEAR repair-hint3 (cells: 23)
+  ok   360x640 UNCLEAR settled (cells: 22)
+  ok   360x640 UNCLEAR transfer (cells: 20)
+  ok   360x640 UNCLEAR transfer-hint1 (cells: 20)
+  ok   360x640 UNCLEAR summary (cells: 0)
+
+== 390x720 — OPERATIONAL_EQUAL ==
+  ok   390x720 OPERATIONAL_EQUAL paths-drawer-open (cells: 29)
+  ok   390x720 OPERATIONAL_EQUAL inspect (cells: 29)
+  ok   390x720 OPERATIONAL_EQUAL consequence (cells: 29)
+  ok   390x720 OPERATIONAL_EQUAL interpret (cells: 29)
+  ok   390x720 OPERATIONAL_EQUAL repair-start (cells: 29)
+  ok   390x720 OPERATIONAL_EQUAL repair-hint3 (cells: 29)
+  ok   390x720 OPERATIONAL_EQUAL settled (cells: 22)
+  ok   390x720 OPERATIONAL_EQUAL transfer (cells: 20)
+  ok   390x720 OPERATIONAL_EQUAL transfer-hint1 (cells: 20)
+  ok   390x720 OPERATIONAL_EQUAL summary (cells: 0)
+
+== 390x720 — ARITHMETIC_SLIP ==
+  ok   390x720 ARITHMETIC_SLIP paths-drawer-open (cells: 29)
+  ok   390x720 ARITHMETIC_SLIP inspect (cells: 23)
+  ok   390x720 ARITHMETIC_SLIP consequence (cells: 23)
+  ok   390x720 ARITHMETIC_SLIP interpret (cells: 23)
+  ok   390x720 ARITHMETIC_SLIP repair-start (cells: 23)
+  ok   390x720 ARITHMETIC_SLIP repair-hint3 (cells: 23)
+  ok   390x720 ARITHMETIC_SLIP settled (cells: 22)
+  ok   390x720 ARITHMETIC_SLIP transfer (cells: 0)
+  ok   390x720 ARITHMETIC_SLIP transfer-hint1 (cells: 0)
+  ok   390x720 ARITHMETIC_SLIP summary (cells: 0)
+
+== 390x720 — RELATIONAL_VALID ==
+  ok   390x720 RELATIONAL_VALID paths-drawer-open (cells: 29)
+  ok   390x720 RELATIONAL_VALID inspect (cells: 22)
+  ok   390x720 RELATIONAL_VALID consequence (cells: 22)
+  ok   390x720 RELATIONAL_VALID interpret (cells: 22)
+  ok   390x720 RELATIONAL_VALID transfer (cells: 0)
+  ok   390x720 RELATIONAL_VALID transfer-hint1 (cells: 0)
+  ok   390x720 RELATIONAL_VALID summary (cells: 0)
+
+== 390x720 — UNCLEAR ==
+  ok   390x720 UNCLEAR paths-drawer-open (cells: 29)
+  ok   390x720 UNCLEAR inspect (cells: 23)
+  ok   390x720 UNCLEAR consequence (cells: 23)
+  ok   390x720 UNCLEAR interpret (cells: 23)
+  ok   390x720 UNCLEAR clarify (cells: 23)
+  ok   390x720 UNCLEAR repair-start (cells: 23)
+  ok   390x720 UNCLEAR repair-hint3 (cells: 23)
+  ok   390x720 UNCLEAR settled (cells: 22)
+  ok   390x720 UNCLEAR transfer (cells: 20)
+  ok   390x720 UNCLEAR transfer-hint1 (cells: 20)
+  ok   390x720 UNCLEAR summary (cells: 0)
+
+== 390x844 — OPERATIONAL_EQUAL ==
+  ok   390x844 OPERATIONAL_EQUAL paths-drawer-open (cells: 29)
+  ok   390x844 OPERATIONAL_EQUAL inspect (cells: 29)
+  ok   390x844 OPERATIONAL_EQUAL consequence (cells: 29)
+  ok   390x844 OPERATIONAL_EQUAL interpret (cells: 29)
+  ok   390x844 OPERATIONAL_EQUAL repair-start (cells: 29)
+  ok   390x844 OPERATIONAL_EQUAL repair-hint3 (cells: 29)
+  ok   390x844 OPERATIONAL_EQUAL settled (cells: 22)
+  ok   390x844 OPERATIONAL_EQUAL transfer (cells: 20)
+  ok   390x844 OPERATIONAL_EQUAL transfer-hint1 (cells: 20)
+  ok   390x844 OPERATIONAL_EQUAL summary (cells: 0)
+
+== 390x844 — ARITHMETIC_SLIP ==
+  ok   390x844 ARITHMETIC_SLIP paths-drawer-open (cells: 29)
+  ok   390x844 ARITHMETIC_SLIP inspect (cells: 23)
+  ok   390x844 ARITHMETIC_SLIP consequence (cells: 23)
+  ok   390x844 ARITHMETIC_SLIP interpret (cells: 23)
+  ok   390x844 ARITHMETIC_SLIP repair-start (cells: 23)
+  ok   390x844 ARITHMETIC_SLIP repair-hint3 (cells: 23)
+  ok   390x844 ARITHMETIC_SLIP settled (cells: 22)
+  ok   390x844 ARITHMETIC_SLIP transfer (cells: 0)
+  ok   390x844 ARITHMETIC_SLIP transfer-hint1 (cells: 0)
+  ok   390x844 ARITHMETIC_SLIP summary (cells: 0)
+
+== 390x844 — RELATIONAL_VALID ==
+  ok   390x844 RELATIONAL_VALID paths-drawer-open (cells: 29)
+  ok   390x844 RELATIONAL_VALID inspect (cells: 22)
+  ok   390x844 RELATIONAL_VALID consequence (cells: 22)
+  ok   390x844 RELATIONAL_VALID interpret (cells: 22)
+  ok   390x844 RELATIONAL_VALID transfer (cells: 0)
+  ok   390x844 RELATIONAL_VALID transfer-hint1 (cells: 0)
+  ok   390x844 RELATIONAL_VALID summary (cells: 0)
+
+== 390x844 — UNCLEAR ==
+  ok   390x844 UNCLEAR paths-drawer-open (cells: 29)
+  ok   390x844 UNCLEAR inspect (cells: 23)
+  ok   390x844 UNCLEAR consequence (cells: 23)
+  ok   390x844 UNCLEAR interpret (cells: 23)
+  ok   390x844 UNCLEAR clarify (cells: 23)
+  ok   390x844 UNCLEAR repair-start (cells: 23)
+  ok   390x844 UNCLEAR repair-hint3 (cells: 23)
+  ok   390x844 UNCLEAR settled (cells: 22)
+  ok   390x844 UNCLEAR transfer (cells: 20)
+  ok   390x844 UNCLEAR transfer-hint1 (cells: 20)
+  ok   390x844 UNCLEAR summary (cells: 0)
+
+== 1024x700 — OPERATIONAL_EQUAL ==
+  ok   1024x700 OPERATIONAL_EQUAL paths-drawer-open (cells: 29)
+  ok   1024x700 OPERATIONAL_EQUAL inspect (cells: 29)
+  ok   1024x700 OPERATIONAL_EQUAL consequence (cells: 29)
+  ok   1024x700 OPERATIONAL_EQUAL interpret (cells: 29)
+  ok   1024x700 OPERATIONAL_EQUAL repair-start (cells: 29)
+  ok   1024x700 OPERATIONAL_EQUAL repair-hint3 (cells: 29)
+  ok   1024x700 OPERATIONAL_EQUAL settled (cells: 22)
+  ok   1024x700 OPERATIONAL_EQUAL transfer (cells: 20)
+  ok   1024x700 OPERATIONAL_EQUAL transfer-hint1 (cells: 20)
+  ok   1024x700 OPERATIONAL_EQUAL summary (cells: 0)
+
+== 1024x700 — ARITHMETIC_SLIP ==
+  ok   1024x700 ARITHMETIC_SLIP paths-drawer-open (cells: 29)
+  ok   1024x700 ARITHMETIC_SLIP inspect (cells: 23)
+  ok   1024x700 ARITHMETIC_SLIP consequence (cells: 23)
+  ok   1024x700 ARITHMETIC_SLIP interpret (cells: 23)
+  ok   1024x700 ARITHMETIC_SLIP repair-start (cells: 23)
+  ok   1024x700 ARITHMETIC_SLIP repair-hint3 (cells: 23)
+  ok   1024x700 ARITHMETIC_SLIP settled (cells: 22)
+  ok   1024x700 ARITHMETIC_SLIP transfer (cells: 0)
+  ok   1024x700 ARITHMETIC_SLIP transfer-hint1 (cells: 0)
+  ok   1024x700 ARITHMETIC_SLIP summary (cells: 0)
+
+== 1024x700 — RELATIONAL_VALID ==
+  ok   1024x700 RELATIONAL_VALID paths-drawer-open (cells: 29)
+  ok   1024x700 RELATIONAL_VALID inspect (cells: 22)
+  ok   1024x700 RELATIONAL_VALID consequence (cells: 22)
+  ok   1024x700 RELATIONAL_VALID interpret (cells: 22)
+  ok   1024x700 RELATIONAL_VALID transfer (cells: 0)
+  ok   1024x700 RELATIONAL_VALID transfer-hint1 (cells: 0)
+  ok   1024x700 RELATIONAL_VALID summary (cells: 0)
+
+== 1024x700 — UNCLEAR ==
+  ok   1024x700 UNCLEAR paths-drawer-open (cells: 29)
+  ok   1024x700 UNCLEAR inspect (cells: 23)
+  ok   1024x700 UNCLEAR consequence (cells: 23)
+  ok   1024x700 UNCLEAR interpret (cells: 23)
+  ok   1024x700 UNCLEAR clarify (cells: 23)
+  ok   1024x700 UNCLEAR repair-start (cells: 23)
+  ok   1024x700 UNCLEAR repair-hint3 (cells: 23)
+  ok   1024x700 UNCLEAR settled (cells: 22)
+  ok   1024x700 UNCLEAR transfer (cells: 20)
+  ok   1024x700 UNCLEAR transfer-hint1 (cells: 20)
+  ok   1024x700 UNCLEAR summary (cells: 0)
+
+== 1280x720 — OPERATIONAL_EQUAL ==
+  ok   1280x720 OPERATIONAL_EQUAL paths-drawer-open (cells: 29)
+  ok   1280x720 OPERATIONAL_EQUAL inspect (cells: 29)
+  ok   1280x720 OPERATIONAL_EQUAL consequence (cells: 29)
+  ok   1280x720 OPERATIONAL_EQUAL interpret (cells: 29)
+  ok   1280x720 OPERATIONAL_EQUAL repair-start (cells: 29)
+  ok   1280x720 OPERATIONAL_EQUAL repair-hint3 (cells: 29)
+  ok   1280x720 OPERATIONAL_EQUAL settled (cells: 22)
+  ok   1280x720 OPERATIONAL_EQUAL transfer (cells: 20)
+  ok   1280x720 OPERATIONAL_EQUAL transfer-hint1 (cells: 20)
+  ok   1280x720 OPERATIONAL_EQUAL summary (cells: 0)
+
+== 1280x720 — ARITHMETIC_SLIP ==
+  ok   1280x720 ARITHMETIC_SLIP paths-drawer-open (cells: 29)
+  ok   1280x720 ARITHMETIC_SLIP inspect (cells: 23)
+  ok   1280x720 ARITHMETIC_SLIP consequence (cells: 23)
+  ok   1280x720 ARITHMETIC_SLIP interpret (cells: 23)
+  ok   1280x720 ARITHMETIC_SLIP repair-start (cells: 23)
+  ok   1280x720 ARITHMETIC_SLIP repair-hint3 (cells: 23)
+  ok   1280x720 ARITHMETIC_SLIP settled (cells: 22)
+  ok   1280x720 ARITHMETIC_SLIP transfer (cells: 0)
+  ok   1280x720 ARITHMETIC_SLIP transfer-hint1 (cells: 0)
+  ok   1280x720 ARITHMETIC_SLIP summary (cells: 0)
+
+== 1280x720 — RELATIONAL_VALID ==
+  ok   1280x720 RELATIONAL_VALID paths-drawer-open (cells: 29)
+  ok   1280x720 RELATIONAL_VALID inspect (cells: 22)
+  ok   1280x720 RELATIONAL_VALID consequence (cells: 22)
+  ok   1280x720 RELATIONAL_VALID interpret (cells: 22)
+  ok   1280x720 RELATIONAL_VALID transfer (cells: 0)
+  ok   1280x720 RELATIONAL_VALID transfer-hint1 (cells: 0)
+  ok   1280x720 RELATIONAL_VALID summary (cells: 0)
+
+== 1280x720 — UNCLEAR ==
+  ok   1280x720 UNCLEAR paths-drawer-open (cells: 29)
+  ok   1280x720 UNCLEAR inspect (cells: 23)
+  ok   1280x720 UNCLEAR consequence (cells: 23)
+  ok   1280x720 UNCLEAR interpret (cells: 23)
+  ok   1280x720 UNCLEAR clarify (cells: 23)
+  ok   1280x720 UNCLEAR repair-start (cells: 23)
+  ok   1280x720 UNCLEAR repair-hint3 (cells: 23)
+  ok   1280x720 UNCLEAR settled (cells: 22)
+  ok   1280x720 UNCLEAR transfer (cells: 20)
+  ok   1280x720 UNCLEAR transfer-hint1 (cells: 20)
+  ok   1280x720 UNCLEAR summary (cells: 0)
+
+== result ==
+states probed: 228
+states with a problem: 0
+finished: 2026-09-14T05:05:35.254Z

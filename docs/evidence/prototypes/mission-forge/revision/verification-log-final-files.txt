@@ -1,0 +1,257 @@
+PASS  run0-refusals: unrelated text refused honestly — "This scripted prototype only knows stories about 12 crystals, 3 and ships. Tap one of the two examples."
+PASS  run0-refusals: ambiguous text refused honestly — "I can’t tell what the 3 counts: 3 crystals in each ship, or 3 ships sharing them? Tap an example to see both."
+PASS  run0-refusals: empty text refused honestly — "Write a mission story first, or tap one of the two examples."
+PASS  run1-desktop-A: first action visible in 12 ms
+PASS  run1-desktop-A: disclosure badge exact
+PASS  run1-desktop-A: one editable story field
+PASS  run1-desktop-A: two example controls ["3 in each ship","3 ships share"]
+PASS  run1-desktop-A: example "3 in each ship" fills the story field
+PASS  run1-desktop-A: interpreter discloses "Local script read this as: 3 = crystals per ship. No AI is running."
+PASS  run1-desktop-A: equation labels ["total crystals","crystals per ship","number of ships"]
+PASS  run1-desktop-A: story selected schema ships-size
+PASS  run1-desktop-A: 3 is the groupSize
+PASS  run1-desktop-A: Robo builds the opposite world 3 × 4, 0 left
+PASS  run1-desktop-A: Robo looks confidently wrong
+PASS  run1-desktop-A: robo world — bay does not overlap the dock (clear)
+PASS  run1-desktop-A: robo world — no horizontal scroll (1280 <= 1280)
+PASS  run1-desktop-A: scanner compares "3 in each ship" with "4 in each ship"
+PASS  run1-desktop-A: mismatch marked with ≠ and dashed text, not colour alone
+PASS  run1-desktop-A: Robo's reading is rejected with a story hint
+PASS  run1-desktop-A: repair starts with 1 empty ship(s) and 12 crystals (mode repeat)
+PASS  run1-desktop-A: repair action is "Repeat this group"
+PASS  run1-desktop-A: repair start — bay does not overlap the dock (clear)
+PASS  run1-desktop-A: repair start — no horizontal scroll (1280 <= 1280)
+PASS  run1-desktop-A: wrong repair (4 each) → "3 ships with 4 in each: that’s my world again! The story says 3 in each ship."
+PASS  run1-desktop-A: taps + drag loaded 3
+PASS  run1-desktop-A: repaired world = 4 ships × 3, 0 left
+PASS  run1-desktop-A: swapped teach answers flagged
+PASS  run1-desktop-A: Robo restates "Got it! 3 was crystals in each ship, and 4 was the number of ships."
+PASS  run1-desktop-A: transfer mission is rovers-count
+PASS  run1-desktop-A: transfer reverses the build (mode fill)
+PASS  run1-desktop-A: transfer starts with 5 rover(s) and 20 batteries
+PASS  run1-desktop-A: transfer equation 20,5,4
+PASS  run1-desktop-A: transfer start — bay does not overlap the dock (clear)
+PASS  run1-desktop-A: transfer start — no horizontal scroll (1280 <= 1280)
+PASS  run1-desktop-A: transfer misconception (5 each) → [5,5,5,5,0] and is rejected
+PASS  run1-desktop-A: transfer solved [4,4,4,4,4], 0 left
+PASS  run1-desktop-A: wrong transfer unit gets a hint
+PASS  run1-desktop-A: contrast line "In the ship mission, 4 counted the number of ships. Here, 4 counts batteries in each rover!"
+PASS  run1-desktop-A: summary "12 ÷ 3 = 44 → number of ships (number of groups)20 ÷ 5 = 44 → batteries in each rover (group size)"
+      run 1 wall time 36 s (scripted, no reading pauses)
+PASS  run1: Replay clears the selected schema and the world without a reload
+PASS  run1: Replay clears the equation role labels
+PASS  run2-desktop-B: first action visible in 3 ms
+PASS  run2-desktop-B: disclosure badge exact
+PASS  run2-desktop-B: one editable story field
+PASS  run2-desktop-B: two example controls ["3 in each ship","3 ships share"]
+PASS  run2-desktop-B: example "3 ships share" fills the story field
+PASS  run2-desktop-B: interpreter discloses "Local script read this as: 3 = number of ships. No AI is running."
+PASS  run2-desktop-B: equation labels ["total crystals","number of ships","crystals per ship"]
+PASS  run2-desktop-B: story selected schema ships-count
+PASS  run2-desktop-B: 3 is the groupCount
+PASS  run2-desktop-B: Robo builds the opposite world 4 × 3, 0 left
+PASS  run2-desktop-B: Robo looks confidently wrong
+PASS  run2-desktop-B: robo world — bay does not overlap the dock (clear)
+PASS  run2-desktop-B: robo world — no horizontal scroll (1280 <= 1280)
+PASS  run2-desktop-B: scanner compares "3 ships" with "4 ships"
+PASS  run2-desktop-B: mismatch marked with ≠ and dashed text, not colour alone
+PASS  run2-desktop-B: Robo's reading is rejected with a story hint
+PASS  run2-desktop-B: repair starts with 3 empty ship(s) and 12 crystals (mode fill)
+PASS  run2-desktop-B: repair action is "Fill every ship the same"
+PASS  run2-desktop-B: repair start — bay does not overlap the dock (clear)
+PASS  run2-desktop-B: repair start — no horizontal scroll (1280 <= 1280)
+PASS  run2-desktop-B: wrong repair (3 each) → "6 crystals are still in the bay. Share all 12 across the 3 ships."
+PASS  run2-desktop-B: taps + drag loaded 4
+PASS  run2-desktop-B: repaired world = 3 ships × 4, 0 left
+PASS  run2-desktop-B: swapped teach answers flagged
+PASS  run2-desktop-B: Robo restates "Got it! 3 was the number of ships, and 4 was crystals in each ship."
+PASS  run2-desktop-B: transfer mission is rovers-size
+PASS  run2-desktop-B: transfer reverses the build (mode repeat)
+PASS  run2-desktop-B: transfer starts with 1 rover(s) and 20 batteries
+PASS  run2-desktop-B: transfer equation 20,5,4
+PASS  run2-desktop-B: transfer start — bay does not overlap the dock (clear)
+PASS  run2-desktop-B: transfer start — no horizontal scroll (1280 <= 1280)
+PASS  run2-desktop-B: transfer misconception (4 each) → [4,4,4,4,4] and is rejected
+PASS  run2-desktop-B: transfer solved [5,5,5,5], 0 left
+PASS  run2-desktop-B: wrong transfer unit gets a hint
+PASS  run2-desktop-B: contrast line "In the ship mission, 4 counted crystals in each ship. Here, 4 counts the number of rovers!"
+PASS  run2-desktop-B: summary "12 ÷ 3 = 44 → crystals in each ship (group size)20 ÷ 5 = 44 → number of rovers (number of groups)"
+      run 2 wall time 34 s
+PASS  run2: the second story selected the other schema on the same page
+PASS  run3-keyboard-B: focus starts on "Forge a mission"
+PASS  run3-keyboard-B: focus moves into the story box
+PASS  run3-keyboard-B: typed wording selected ships-count
+PASS  run3-keyboard-B: Tab reaches "No, debug it"
+PASS  run3-keyboard-B: Tab reaches "number of ships"
+PASS  run3-keyboard-B: focus on "+ Load a crystal"
+PASS  run3-keyboard-B: Tab reaches "Fill every ship the same"
+PASS  run3-keyboard-B: radios chosen by keyboard {"d":"groupCount","q":"groupSize"}
+PASS  run3-keyboard-B: Tab reaches "Teach Robo"
+PASS  run3-keyboard-B: Tab reaches "Repeat this group"
+PASS  run3-keyboard-B: Tab reaches "number of rovers"
+PASS  run3-keyboard-B: keyboard run reached the summary
+PASS  run3-keyboard-B: focused control shows a solid outline (solid)
+PASS  run4-keyboard-A: focus starts on "Forge a mission"
+PASS  run4-keyboard-A: focus moves into the story box
+PASS  run4-keyboard-A: typed wording selected ships-size
+PASS  run4-keyboard-A: Tab reaches "No, debug it"
+PASS  run4-keyboard-A: Tab reaches "crystals per ship"
+PASS  run4-keyboard-A: focus on "+ Load a crystal"
+PASS  run4-keyboard-A: Tab reaches "Repeat this group"
+PASS  run4-keyboard-A: radios chosen by keyboard {"d":"groupSize","q":"groupCount"}
+PASS  run4-keyboard-A: Tab reaches "Teach Robo"
+PASS  run4-keyboard-A: Tab reaches "Fill every rover the same"
+PASS  run4-keyboard-A: Tab reaches "batteries in each rover"
+PASS  run4-keyboard-A: keyboard run reached the summary
+PASS  run4-keyboard-A: focused control shows a solid outline (solid)
+PASS  run5-mobile-A: first action visible in 62 ms
+PASS  run5-mobile-A: disclosure badge exact
+PASS  run5-mobile-A: one editable story field
+PASS  run5-mobile-A: two example controls ["3 in each ship","3 ships share"]
+PASS  run5-mobile-A: example "3 in each ship" fills the story field
+PASS  run5-mobile-A: interpreter discloses "Local script read this as: 3 = crystals per ship. No AI is running."
+PASS  run5-mobile-A: equation labels ["total crystals","crystals per ship","number of ships"]
+PASS  run5-mobile-A: story selected schema ships-size
+PASS  run5-mobile-A: 3 is the groupSize
+PASS  run5-mobile-A: Robo builds the opposite world 3 × 4, 0 left
+PASS  run5-mobile-A: Robo looks confidently wrong
+PASS  run5-mobile-A: robo world — bay does not overlap the dock (clear)
+PASS  run5-mobile-A: robo world — no horizontal scroll (390 <= 390)
+PASS  run5-mobile-A: scanner compares "3 in each ship" with "4 in each ship"
+PASS  run5-mobile-A: mismatch marked with ≠ and dashed text, not colour alone
+PASS  run5-mobile-A: Robo's reading is rejected with a story hint
+PASS  run5-mobile-A: repair starts with 1 empty ship(s) and 12 crystals (mode repeat)
+PASS  run5-mobile-A: repair action is "Repeat this group"
+PASS  run5-mobile-A: repair start — bay does not overlap the dock (clear)
+PASS  run5-mobile-A: repair start — no horizontal scroll (390 <= 390)
+PASS  run5-mobile-A: wrong repair (4 each) → "3 ships with 4 in each: that’s my world again! The story says 3 in each ship."
+PASS  run5-mobile-A: taps loaded 3
+PASS  run5-mobile-A: repaired world = 4 ships × 3, 0 left
+PASS  run5-mobile-A: swapped teach answers flagged
+PASS  run5-mobile-A: Robo restates "Got it! 3 was crystals in each ship, and 4 was the number of ships."
+PASS  run5-mobile-A: transfer mission is rovers-count
+PASS  run5-mobile-A: transfer reverses the build (mode fill)
+PASS  run5-mobile-A: transfer starts with 5 rover(s) and 20 batteries
+PASS  run5-mobile-A: transfer equation 20,5,4
+PASS  run5-mobile-A: transfer start — bay does not overlap the dock (clear)
+PASS  run5-mobile-A: transfer start — no horizontal scroll (390 <= 390)
+PASS  run5-mobile-A: transfer misconception (5 each) → [5,5,5,5,0] and is rejected
+PASS  run5-mobile-A: transfer solved [4,4,4,4,4], 0 left
+PASS  run5-mobile-A: wrong transfer unit gets a hint
+PASS  run5-mobile-A: contrast line "In the ship mission, 4 counted the number of ships. Here, 4 counts batteries in each rover!"
+PASS  run5-mobile-A: summary "12 ÷ 3 = 44 → number of ships (number of groups)20 ÷ 5 = 44 → batteries in each rover (group size)"
+PASS  run6-mobile-B: first action visible in 14 ms
+PASS  run6-mobile-B: disclosure badge exact
+PASS  run6-mobile-B: one editable story field
+PASS  run6-mobile-B: two example controls ["3 in each ship","3 ships share"]
+PASS  run6-mobile-B: example "3 ships share" fills the story field
+PASS  run6-mobile-B: interpreter discloses "Local script read this as: 3 = number of ships. No AI is running."
+PASS  run6-mobile-B: equation labels ["total crystals","number of ships","crystals per ship"]
+PASS  run6-mobile-B: story selected schema ships-count
+PASS  run6-mobile-B: 3 is the groupCount
+PASS  run6-mobile-B: Robo builds the opposite world 4 × 3, 0 left
+PASS  run6-mobile-B: Robo looks confidently wrong
+PASS  run6-mobile-B: robo world — bay does not overlap the dock (clear)
+PASS  run6-mobile-B: robo world — no horizontal scroll (390 <= 390)
+PASS  run6-mobile-B: scanner compares "3 ships" with "4 ships"
+PASS  run6-mobile-B: mismatch marked with ≠ and dashed text, not colour alone
+PASS  run6-mobile-B: Robo's reading is rejected with a story hint
+PASS  run6-mobile-B: repair starts with 3 empty ship(s) and 12 crystals (mode fill)
+PASS  run6-mobile-B: repair action is "Fill every ship the same"
+PASS  run6-mobile-B: repair start — bay does not overlap the dock (clear)
+PASS  run6-mobile-B: repair start — no horizontal scroll (390 <= 390)
+PASS  run6-mobile-B: wrong repair (3 each) → "3 crystals are still in the bay. Share all 12 across the 3 ships."
+PASS  run6-mobile-B: taps loaded 4
+PASS  run6-mobile-B: repaired world = 3 ships × 4, 0 left
+PASS  run6-mobile-B: swapped teach answers flagged
+PASS  run6-mobile-B: Robo restates "Got it! 3 was the number of ships, and 4 was crystals in each ship."
+PASS  run6-mobile-B: transfer mission is rovers-size
+PASS  run6-mobile-B: transfer reverses the build (mode repeat)
+PASS  run6-mobile-B: transfer starts with 1 rover(s) and 20 batteries
+PASS  run6-mobile-B: transfer equation 20,5,4
+PASS  run6-mobile-B: transfer start — bay does not overlap the dock (clear)
+PASS  run6-mobile-B: transfer start — no horizontal scroll (390 <= 390)
+PASS  run6-mobile-B: transfer misconception (4 each) → [4,4,4,4,4] and is rejected
+PASS  run6-mobile-B: transfer solved [5,5,5,5], 0 left
+PASS  run6-mobile-B: wrong transfer unit gets a hint
+PASS  run6-mobile-B: contrast line "In the ship mission, 4 counted crystals in each ship. Here, 4 counts the number of rovers!"
+PASS  run6-mobile-B: summary "12 ÷ 3 = 44 → crystals in each ship (group size)20 ÷ 5 = 44 → number of rovers (number of groups)"
+PASS  run7-mobile-390x720-B: first action visible in 23 ms
+PASS  run7-mobile-390x720-B: disclosure badge exact
+PASS  run7-mobile-390x720-B: one editable story field
+PASS  run7-mobile-390x720-B: two example controls ["3 in each ship","3 ships share"]
+PASS  run7-mobile-390x720-B: example "3 ships share" fills the story field
+PASS  run7-mobile-390x720-B: interpreter discloses "Local script read this as: 3 = number of ships. No AI is running."
+PASS  run7-mobile-390x720-B: equation labels ["total crystals","number of ships","crystals per ship"]
+PASS  run7-mobile-390x720-B: story selected schema ships-count
+PASS  run7-mobile-390x720-B: 3 is the groupCount
+PASS  run7-mobile-390x720-B: Robo builds the opposite world 4 × 3, 0 left
+PASS  run7-mobile-390x720-B: Robo looks confidently wrong
+PASS  run7-mobile-390x720-B: robo world — bay does not overlap the dock (clear)
+PASS  run7-mobile-390x720-B: robo world — no horizontal scroll (390 <= 390)
+PASS  run7-mobile-390x720-B: scanner compares "3 ships" with "4 ships"
+PASS  run7-mobile-390x720-B: mismatch marked with ≠ and dashed text, not colour alone
+PASS  run7-mobile-390x720-B: Robo's reading is rejected with a story hint
+PASS  run7-mobile-390x720-B: repair starts with 3 empty ship(s) and 12 crystals (mode fill)
+PASS  run7-mobile-390x720-B: repair action is "Fill every ship the same"
+PASS  run7-mobile-390x720-B: repair start — bay does not overlap the dock (clear)
+PASS  run7-mobile-390x720-B: repair start — no horizontal scroll (390 <= 390)
+PASS  run7-mobile-390x720-B: wrong repair (3 each) → "3 crystals are still in the bay. Share all 12 across the 3 ships."
+PASS  run7-mobile-390x720-B: taps loaded 4
+PASS  run7-mobile-390x720-B: repaired world = 3 ships × 4, 0 left
+PASS  run7-mobile-390x720-B: swapped teach answers flagged
+PASS  run7-mobile-390x720-B: Robo restates "Got it! 3 was the number of ships, and 4 was crystals in each ship."
+PASS  run7-mobile-390x720-B: transfer mission is rovers-size
+PASS  run7-mobile-390x720-B: transfer reverses the build (mode repeat)
+PASS  run7-mobile-390x720-B: transfer starts with 1 rover(s) and 20 batteries
+PASS  run7-mobile-390x720-B: transfer equation 20,5,4
+PASS  run7-mobile-390x720-B: transfer start — bay does not overlap the dock (clear)
+PASS  run7-mobile-390x720-B: transfer start — no horizontal scroll (390 <= 390)
+PASS  run7-mobile-390x720-B: transfer misconception (4 each) → [4,4,4,4,4] and is rejected
+PASS  run7-mobile-390x720-B: transfer solved [5,5,5,5], 0 left
+PASS  run7-mobile-390x720-B: wrong transfer unit gets a hint
+PASS  run7-mobile-390x720-B: contrast line "In the ship mission, 4 counted crystals in each ship. Here, 4 counts the number of rovers!"
+PASS  run7-mobile-390x720-B: summary "12 ÷ 3 = 44 → crystals in each ship (group size)20 ÷ 5 = 44 → number of rovers (number of groups)"
+PASS  run8-reduced-motion-A: first action visible in 21 ms
+PASS  run8-reduced-motion-A: disclosure badge exact
+PASS  run8-reduced-motion-A: one editable story field
+PASS  run8-reduced-motion-A: two example controls ["3 in each ship","3 ships share"]
+PASS  run8-reduced-motion-A: example "3 in each ship" fills the story field
+PASS  run8-reduced-motion-A: interpreter discloses "Local script read this as: 3 = crystals per ship. No AI is running."
+PASS  run8-reduced-motion-A: equation labels ["total crystals","crystals per ship","number of ships"]
+PASS  run8-reduced-motion-A: story selected schema ships-size
+PASS  run8-reduced-motion-A: 3 is the groupSize
+PASS  run8-reduced-motion-A: Robo builds the opposite world 3 × 4, 0 left
+PASS  run8-reduced-motion-A: Robo looks confidently wrong
+PASS  run8-reduced-motion-A: robo world — bay does not overlap the dock (clear)
+PASS  run8-reduced-motion-A: robo world — no horizontal scroll (1280 <= 1280)
+PASS  run8-reduced-motion-A: scanner compares "3 in each ship" with "4 in each ship"
+PASS  run8-reduced-motion-A: mismatch marked with ≠ and dashed text, not colour alone
+PASS  run8-reduced-motion-A: Robo's reading is rejected with a story hint
+PASS  run8-reduced-motion-A: repair starts with 1 empty ship(s) and 12 crystals (mode repeat)
+PASS  run8-reduced-motion-A: repair action is "Repeat this group"
+PASS  run8-reduced-motion-A: repair start — bay does not overlap the dock (clear)
+PASS  run8-reduced-motion-A: repair start — no horizontal scroll (1280 <= 1280)
+PASS  run8-reduced-motion-A: wrong repair (4 each) → "3 ships with 4 in each: that’s my world again! The story says 3 in each ship."
+PASS  run8-reduced-motion-A: taps + drag loaded 3
+PASS  run8-reduced-motion-A: repaired world = 4 ships × 3, 0 left
+PASS  run8-reduced-motion-A: swapped teach answers flagged
+PASS  run8-reduced-motion-A: Robo restates "Got it! 3 was crystals in each ship, and 4 was the number of ships."
+PASS  run8-reduced-motion-A: transfer mission is rovers-count
+PASS  run8-reduced-motion-A: transfer reverses the build (mode fill)
+PASS  run8-reduced-motion-A: transfer starts with 5 rover(s) and 20 batteries
+PASS  run8-reduced-motion-A: transfer equation 20,5,4
+PASS  run8-reduced-motion-A: transfer start — bay does not overlap the dock (clear)
+PASS  run8-reduced-motion-A: transfer start — no horizontal scroll (1280 <= 1280)
+PASS  run8-reduced-motion-A: transfer misconception (5 each) → [5,5,5,5,0] and is rejected
+PASS  run8-reduced-motion-A: transfer solved [4,4,4,4,4], 0 left
+PASS  run8-reduced-motion-A: wrong transfer unit gets a hint
+PASS  run8-reduced-motion-A: contrast line "In the ship mission, 4 counted the number of ships. Here, 4 counts batteries in each rover!"
+PASS  run8-reduced-motion-A: summary "12 ÷ 3 = 44 → number of ships (number of groups)20 ÷ 5 = 44 → batteries in each rover (group size)"
+PASS  run8: reduced motion spawns no flying/beam elements (0)
+PASS  run8: CSS transitions collapse under reduced motion (0.001s)
+      run 8 wall time 6 s
+PASS  network: only localhost requests (http://localhost:5173)
+PASS  console: 0 errors/warnings
+
+252/252 checks passed

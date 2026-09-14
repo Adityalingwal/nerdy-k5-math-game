@@ -1,0 +1,120 @@
+== 320x568 — 3 in each ship ==
+  320x568 robo-world: ok
+  320x568 repair-start: ok
+  320x568 repaired: ok
+  320x568 transfer-start: ok
+  320x568 transfer-pass: ok
+== 320x568 — 3 ships share ==
+  320x568 robo-world: ok
+  320x568 repair-start: ok
+  320x568 repaired: ok
+  320x568 transfer-start: ok
+  320x568 transfer-pass: ok
+== 360x640 — 3 in each ship ==
+  360x640 robo-world: ok
+  360x640 repair-start: ok
+  360x640 repaired: ok
+  360x640 transfer-start: ok
+  360x640 transfer-pass: ok
+== 360x640 — 3 ships share ==
+  360x640 robo-world: ok
+  360x640 repair-start: ok
+  360x640 repaired: ok
+  360x640 transfer-start: ok
+  360x640 transfer-pass: ok
+== 390x720 — 3 in each ship ==
+  390x720 robo-world: ok
+  390x720 repair-start: ok
+  390x720 repaired: ok
+  390x720 transfer-start: ok
+  390x720 transfer-pass: ok
+== 390x720 — 3 ships share ==
+  390x720 robo-world: ok
+  390x720 repair-start: ok
+  390x720 repaired: ok
+  390x720 transfer-start: ok
+  390x720 transfer-pass: ok
+== 390x780 — 3 in each ship ==
+  390x780 robo-world: ok
+  390x780 repair-start: ok
+  390x780 repaired: ok
+  390x780 transfer-start: ok
+  390x780 transfer-pass: ok
+== 390x780 — 3 ships share ==
+  390x780 robo-world: ok
+  390x780 repair-start: ok
+  390x780 repaired: ok
+  390x780 transfer-start: ok
+  390x780 transfer-pass: ok
+== 390x781 — 3 in each ship ==
+  390x781 robo-world: ok
+  390x781 repair-start: ok
+  390x781 repaired: ok
+  390x781 transfer-start: ok
+  390x781 transfer-pass: ok
+== 390x781 — 3 ships share ==
+  390x781 robo-world: ok
+  390x781 repair-start: ok
+  390x781 repaired: ok
+  390x781 transfer-start: ok
+  390x781 transfer-pass: ok
+== 390x800 — 3 in each ship ==
+  390x800 robo-world: ok
+  390x800 repair-start: ok
+  390x800 repaired: ok
+  390x800 transfer-start: ok
+  390x800 transfer-pass: ok
+== 390x800 — 3 ships share ==
+  390x800 robo-world: ok
+  390x800 repair-start: ok
+  390x800 repaired: ok
+  390x800 transfer-start: ok
+  390x800 transfer-pass: ok
+== 390x844 — 3 in each ship ==
+  390x844 robo-world: ok
+  390x844 repair-start: ok
+  390x844 repaired: ok
+  390x844 transfer-start: ok
+  390x844 transfer-pass: ok
+== 390x844 — 3 ships share ==
+  390x844 robo-world: ok
+  390x844 repair-start: ok
+  390x844 repaired: ok
+  390x844 transfer-start: ok
+  390x844 transfer-pass: ok
+== 1024x700 — 3 in each ship ==
+  1024x700 robo-world: ok
+  1024x700 repair-start: ok
+  1024x700 repaired: ok
+  1024x700 transfer-start: ok
+  1024x700 transfer-pass: ok
+== 1024x700 — 3 ships share ==
+  1024x700 robo-world: ok
+  1024x700 repair-start: ok
+  1024x700 repaired: ok
+  1024x700 transfer-start: ok
+  1024x700 transfer-pass: ok
+== 1280x640 — 3 in each ship ==
+  1280x640 robo-world: ok
+  1280x640 repair-start: ok
+  1280x640 repaired: ok
+  1280x640 transfer-start: ok
+  1280x640 transfer-pass: ok
+== 1280x640 — 3 ships share ==
+  1280x640 robo-world: ok
+  1280x640 repair-start: ok
+  1280x640 repaired: ok
+  1280x640 transfer-start: ok
+  1280x640 transfer-pass: ok
+== 1280x720 — 3 in each ship ==
+  1280x720 robo-world: ok
+  1280x720 repair-start: ok
+  1280x720 repaired: ok
+  1280x720 transfer-start: ok
+  1280x720 transfer-pass: ok
+== 1280x720 — 3 ships share ==
+  1280x720 robo-world: ok
+  1280x720 repair-start: ok
+  1280x720 repaired: ok
+  1280x720 transfer-start: ok
+  1280x720 transfer-pass: ok
