@@ -267,6 +267,14 @@ Last updated: 2026-09-14
   product judgment, unresolved issues and one next research task. It authorizes
   no code change, API key, model call, branch, commit, push or deployment.
 
+- 2026-09-14: Accepted D-016 and prepared a market-guided Claude Code research
+  prompt. The next research pass must study observable loops in Prodigy,
+  SplashLearn, DragonBox, DreamBox and ST Math; extract IP-safe mechanisms;
+  combine them with existing misconception evidence; generate exactly six
+  original hypotheses; and recommend only a cheap non-code validation target.
+  It is not blind ideation and authorizes no runtime change, real-model call,
+  prototype or final selection.
+
 ## Current checkpoint
 
 Final concept selection remains open. Decimal Dock remains preserved. Mission
@@ -279,8 +287,10 @@ authorized.
 
 Immediate:
 
-- Have the new collaborator run the read-only onboarding prompt and return the
-  required assessment before assigning any implementation work.
+- Run the D-016 market-guided Claude Code prompt and independently review its
+  report before authorizing any product implementation.
+- Have the new collaborator run the separate read-only onboarding prompt and
+  return their assessment independently.
 - Do not resume Mission Forge or Equal-Sign Repair work. Preserve Decimal Dock
   and both closed experiments as reference material until the final concept is
   deliberately selected.

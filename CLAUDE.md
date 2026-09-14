@@ -34,6 +34,11 @@ Current product-selection state:
 - A zero-knowledge collaborator must follow `docs/collaborator-handoff.md`.
   Its first-pass prompt is deliberately read-only: understand, verify and
   report before proposing implementation.
+- D-016 authorizes one market-guided research pass through
+  `docs/prompts/claude-code-market-guided-concept-research-prompt.md`. Follow
+  that prompt exactly. It may create one research report and update progress
+  and evidence only; it does not authorize code, a prototype, a model API call
+  or final concept selection.
 
 For the historical Mission Forge record, read:
 

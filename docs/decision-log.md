@@ -305,3 +305,27 @@
 - Collaboration consequence: before collaborator-authored material is included
   in a hackathon submission, record its provenance and obtain any written
   rights assignment required by the official rules.
+
+## D-016: Use market-guided mechanism research before another concept build
+
+- Status: accepted
+- Date: 2026-09-14
+- Decision: replace another blind ideation pass with one guided research lane
+  that first studies observable K-5 game loops in Prodigy, SplashLearn,
+  DragonBox, DreamBox and ST Math, extracts IP-safe abstract mechanisms, and
+  combines those mechanisms with the project's misconception evidence to form
+  original concept hypotheses.
+- Reason: the earlier process began from misconception research and internal
+  invention before performing a structured market-mechanic study. That made it
+  easier to create technically coherent prototypes without a strong game loop,
+  differentiation bar or market reference target. The existing blind reports
+  remain useful inputs but should not control this pass.
+- Boundary: use live, directly cited sources and distinguish observable gameplay
+  from marketing or inference. Do not copy characters, artwork, layouts, text
+  or code; add no dependency or asset. Create research documentation only. Do
+  not modify runtime code, call a model API, use learner data, build a prototype,
+  revive a dropped concept or select the final submission concept.
+- Next gate: independently review the resulting mechanism library, six concepts
+  and top-three recommendation. Then choose at most one concept for a cheap
+  non-code falsification test, or reject the research output. No implementation
+  is authorized by D-016.

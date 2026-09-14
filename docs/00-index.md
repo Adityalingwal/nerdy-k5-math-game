@@ -24,10 +24,12 @@ Last reviewed: 2026-09-14
   and the small authored branch map did not justify runtime AI. Preserve the
   harness, prototype and evidence; do not run the real-model route or revise
   the concept.
-- Current phase: final concept selection is open. The Day 1-3 Decimal Dock MVP
-  remains preserved at the repository root as a working candidate, not the
-  final concept. Remainder Routing remains researched only. No new prototype,
-  model test or product implementation is currently authorized.
+- Current phase: D-016 authorizes one market-guided mechanism-research and
+  concept-synthesis pass before another build. Final concept selection remains
+  open. The Day 1-3 Decimal Dock MVP remains preserved at the repository root
+  as a working candidate, not the final concept. Remainder Routing remains
+  researched only. No new prototype, model test or product implementation is
+  currently authorized.
 - Repository status: D-015 authorizes the useful research, documentation,
   reference implementation and closed experiments to be published in the
   existing public GitHub repository. Secrets, generated build output, private
@@ -75,6 +77,9 @@ Last reviewed: 2026-09-14
    - preliminary official-source comparison of Prodigy, SplashLearn,
    DragonBox, DreamBox and ST Math; includes reusable patterns, anti-patterns,
    evidence limits and the checklist used to review the D-013 prototype.
+   [Market-guided Claude Code research prompt](prompts/claude-code-market-guided-concept-research-prompt.md)
+   - the active D-016 handoff for mechanism extraction and original concept
+   synthesis; research only, no implementation.
 12. [Decimal deep research](research/deep/decimal-longer-is-larger.md) -
    verified evidence, disconfirming evidence, AI value test, demo spine,
    and risks for the implemented candidate.
